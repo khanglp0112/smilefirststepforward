@@ -34,11 +34,96 @@
         body {
             font-family: 'Manrope', sans-serif;
             background-color: #FFFFFF;
+            overflow-x: hidden;
         }
         /* Yếu tố đồ họa độc quyền "Smile Frame" nét mảnh */
         .smile-frame-vector {
             border: 2px solid #FD7608;
             border-radius: 120px 120px 32px 32px;
+        }
+        /* Hiệu ứng quét sáng sang trọng (Sleek Shine Effect) */
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            transition: none;
+        }
+        .shine-effect:hover::after {
+            left: 150%;
+            transition: all 1s ease-in-out;
+        }
+        
+        /* Hiệu ứng lơ lửng nhẹ nhàng (Luxury Float Animation) */
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float-gentle 6s ease-in-out infinite;
+        }
+        
+        /* Chỉnh màu cho thanh kéo thanh lịch (Custom Glassmorphism Slider) */
+        .luxury-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #E2E8F0;
+            border-radius: 999px;
+            outline: none;
+        }
+        .luxury-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #FD7608;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 4px 10px rgba(253, 118, 8, 0.3);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .luxury-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 14px rgba(253, 118, 8, 0.5);
+        }
+
+        /* Hộ chiếu tương tác 3D lấp lánh (Gold Accent Glitter and Hover) */
+        .passport-card {
+            background: radial-gradient(circle at 20% 30%, #112240 0%, #0A192F 100%);
+            border: 1px solid rgba(253, 118, 8, 0.25);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .passport-card:hover {
+            transform: translateY(-8px) rotateY(4deg) rotateX(4deg);
+            box-shadow: 0 25px 50px -12px rgba(10, 25, 47, 0.4), 0 0 30px rgba(253, 118, 8, 0.15);
+            border-color: rgba(253, 118, 8, 0.6);
+        }
+
+        /* Reading Progress Bar */
+        .progress-indicator {
+            height: 4px;
+            background: linear-gradient(to right, #FD7608, #FD811C, #6A3001);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            z-index: 100;
+            transition: width 0.1s ease-out;
         }
     </style>
 </head>
@@ -95,23 +180,50 @@
                 </div>
             </div>
 
-            <!-- Right Visual Graphic Block (40% Area - Ý đồ "Smile Frame" ẩn dụ cao cấp) -->
+            <!-- Right Visual Graphic Block (40% Area - Thiết bị mô phỏng 3D tương tác cao cấp) -->
             <div class="lg:col-span-5 flex justify-center relative">
-                <!-- Background soft glowing effect -->
-                <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/5 to-transparent rounded-full blur-3xl -z-10"></div>
+                <!-- Background soft glowing effects -->
+                <div class="absolute -top-12 -left-12 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
                 
-                <!-- "Smile Frame" Vector Container -->
-                <div class="smile-frame-vector p-10 bg-white shadow-xl max-w-[350px] w-full border-2 border-orion-orangeLight/20 flex flex-col items-center text-center relative transition-transform duration-500 hover:scale-[1.02]">
-                    <div class="w-12 h-1.5 bg-slate-100 rounded-full mb-8"></div>
+                <!-- Interactive "Smile Frame" Vector Container -->
+                <div class="smile-frame-vector p-8 md:p-10 bg-white shadow-2xl max-w-[380px] w-full border border-orion-orange/15 flex flex-col items-center text-center relative transition-all duration-500 hover:shadow-orange-500/10 hover:border-orion-orangeLight/40 animate-float z-10">
+                    <div class="w-16 h-1.5 bg-slate-100 rounded-full mb-6"></div>
                     
-                    <!-- Subject Abstract representation -->
-                    <div class="w-36 h-36 bg-[#F8F9FA] rounded-full border-2 border-dashed border-orion-orange/30 flex items-center justify-center mb-8 overflow-hidden relative">
-                        <div class="absolute inset-2 bg-gradient-to-br from-orange-500/5 to-transparent rounded-full"></div>
-                        <span class="text-5xl relative z-10">🎓</span>
+                    <!-- Premium Campaign Showcase Screen -->
+                    <div class="w-full aspect-[4/5] bg-gradient-to-b from-[#0A192F] to-[#050e1a] rounded-2xl border border-slate-800 p-6 relative overflow-hidden flex flex-col justify-between text-left group">
+                        <!-- Background overlay and glowing effects -->
+                        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-orion-orange/10 rounded-full blur-3xl group-hover:bg-orion-orange/15 transition-all duration-500"></div>
+                        <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
+                        
+                        <!-- Top Accent Tag -->
+                        <div class="flex items-center justify-between z-10">
+                            <span class="text-[9px] font-bold text-orion-orange tracking-widest uppercase bg-orion-orange/10 px-2.5 py-1 rounded border border-orion-orange/20">CAMPAIGN HIGHLIGHT</span>
+                            <span class="w-2 h-2 rounded-full bg-orion-orange animate-pulse"></span>
+                        </div>
+
+                        <!-- Big Idea Content -->
+                        <div class="my-auto pt-6 space-y-2 z-10">
+                            <span class="text-xs font-semibold text-slate-400 tracking-wider block">Big Idea:</span>
+                            <h3 class="text-3xl md:text-4xl font-black text-white tracking-tight leading-[1.2] font-manrope">
+                                Smile First,<br>
+                                <span class="bg-gradient-to-r from-orion-orange via-orion-orangeLight to-white bg-clip-text text-transparent">Step Forward</span>
+                            </h3>
+                        </div>
+
+                        <!-- Tagline Block -->
+                        <div class="border border-white/10 bg-white/[0.03] backdrop-blur-md rounded-xl p-4 space-y-1.5 transition-all duration-300 hover:border-orion-orange/40 hover:bg-white/[0.06] z-10">
+                            <span class="text-[9px] font-bold text-orion-orange uppercase tracking-widest block">Campaign Tagline</span>
+                            <p class="text-xs md:text-sm font-bold text-white leading-normal font-manrope italic">
+                                "Your Smile is Your First Portfolio."
+                            </p>
+                        </div>
                     </div>
-                    
-                    <h3 class="text-base font-extrabold text-academy-blue tracking-wide uppercase">Your Smile is your</h3>
-                    <p class="text-sm text-orion-orange font-extrabold italic mt-1 bg-orange-50 px-3 py-1 rounded-full border border-orion-orangeLight/10">"First Portfolio"</p>
+
+                    <p class="text-[11px] text-slate-400 font-medium mt-4">
+                        * Sứ mệnh đồng hành cùng học sinh, sinh viên tự tin bước vào tương lai rạng ngời.
+                    </p>
                 </div>
             </div>
 
@@ -218,30 +330,67 @@
 
                 <!-- QUIZ SCREEN 3: RESULT SCREEN -->
                 <div id="quiz-screen-result" class="hidden text-center space-y-8 py-6">
-                    <span class="text-5xl">🎉</span>
+                    <span class="text-5xl animate-[bounce_1.5s_infinite]">🎉</span>
                     <h3 class="text-2xl font-extrabold text-academy-blue">TƯ DUY CHIẾN LƯỢC ĐÃ ĐƯỢC KHAI PHÁ!</h3>
                     <p class="text-slate-500 text-sm max-w-lg mx-auto">
-                        Bạn đã xuất sắc tháo gỡ hoàn toàn các lầm tưởng và mở khóa thành công tấm hộ chiếu kỹ thuật số đồng thương hiệu.
+                        Bạn đã xuất sắc tháo gỡ hoàn toàn các lầm tưởng và mở khóa thành công tấm hộ chiếu kỹ thuật số đặc quyền.
                     </p>
                     
-                    <!-- Coupon/Passport Box -->
-                    <div class="max-w-md mx-auto bg-gradient-to-r from-orange-50 to-orange-100/30 border border-orion-orangeLight/20 rounded-3xl p-6 text-left space-y-4">
-                        <div class="flex items-center justify-between border-b border-orange-200/50 pb-3">
-                            <div>
-                                <h4 class="text-[10px] font-bold text-orion-orange uppercase tracking-wider leading-none mb-1">Đồng chứng thực bởi đối tác</h4>
-                                <span class="text-xs font-extrabold text-orion-darkBrown">NHA KHOA ORION</span>
+                    <!-- Premium Holographic Gilded Passport Box -->
+                    <div class="passport-card max-w-md mx-auto rounded-3xl p-6 text-left space-y-6 shadow-2xl relative overflow-hidden text-white cursor-pointer select-none">
+                        <!-- Card shimmer reflection -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                        
+                        <!-- Gold frame border lines -->
+                        <div class="absolute inset-2 border border-orion-orange/20 rounded-[22px] pointer-events-none"></div>
+                        
+                        <!-- Top header -->
+                        <div class="flex items-center justify-between border-b border-orion-orange/30 pb-4 relative z-10">
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-gradient-to-br from-orion-orange to-orion-orangeLight w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs">🎓</span>
+                                <div>
+                                    <h4 class="text-[8px] font-mono tracking-widest text-orion-orange uppercase leading-none mb-1">BẢO TRỢ Y KHOA CHUYÊN NGHIỆP</h4>
+                                    <span class="text-[10px] font-extrabold text-slate-100 uppercase tracking-wider">NHA KHOA ORION</span>
+                                </div>
                             </div>
-                            <span class="text-2xl">🎟️</span>
+                            <div class="text-right">
+                                <span class="text-[8px] font-mono text-slate-400 block">CODE:</span>
+                                <span class="text-[10px] font-mono text-orion-orange font-bold">#SMILE-2026</span>
+                            </div>
                         </div>
-                        <div>
-                            <span class="text-[9px] font-bold text-slate-400 block uppercase tracking-wider">Hội viên đặc quyền</span>
-                            <p class="text-sm font-extrabold text-academy-blue">STUDENT SMILE PASSPORT</p>
-                            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Đặc quyền miễn phí 100% chi phí chụp phim CT Cone Beam 3D và nhận phác đồ chỉnh nha cá nhân hóa trực tiếp cùng bác sĩ chuyên khoa chỉnh nha.</p>
+
+                        <!-- Card Body -->
+                        <div class="space-y-4 relative z-10">
+                            <div>
+                                <span class="text-[8px] font-mono text-slate-400 block uppercase tracking-wider">CHỦ SỞ HỮU HỘ CHIẾU / HOLDER</span>
+                                <p id="passport-holder-name" class="text-base font-extrabold text-white tracking-wide uppercase mt-1">HỘI VIÊN DANH DỰ</p>
+                            </div>
+                            
+                            <div>
+                                <span class="text-[8px] font-mono text-slate-400 block uppercase tracking-wider">TÊN ĐẶC QUYỀN / PRIVILEGE</span>
+                                <p class="text-xs font-bold text-orion-orange mt-0.5">STUDENT SMILE PASSPORT</p>
+                                <p class="text-[10px] text-slate-300 leading-relaxed mt-1">
+                                    ✓ Miễn phí 100% chụp phim CT Cone Beam 3D và phân tích khớp cắn bằng phần mềm AI hiện đại.<br>
+                                    ✓ Thiết lập phác đồ dịch chuyển răng 3D trực tiếp với bác sĩ chuyên khoa chỉnh nha.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer -->
+                        <div class="flex justify-between items-end border-t border-slate-800 pt-4 relative z-10 text-[9px]">
+                            <div class="text-slate-400">
+                                <span class="block text-[7px] font-mono">ĐỊA ĐIỂM SỬ DỤNG:</span>
+                                <span class="font-semibold text-slate-200">Vinhomes Grand Park, Q9</span>
+                            </div>
+                            <!-- Holographic Star Seal -->
+                            <div class="flex items-center space-x-1.5 bg-orion-orange/15 border border-orion-orange/30 px-2 py-1 rounded-md text-orion-orange font-extrabold tracking-widest uppercase">
+                                <span class="inline-block animate-spin text-[8px] mr-0.5">⚙</span> ORION-VERIFIED
+                            </div>
                         </div>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#register-form" class="bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-3.5 px-8 rounded-xl text-xs tracking-wider uppercase shadow-md shadow-orange-500/10 transition-all duration-150">
+                        <a href="#register-form" class="bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-3.5 px-8 rounded-xl text-xs tracking-wider uppercase shadow-lg shadow-orange-500/20 transition-all duration-150 shine-effect">
                             Kích hoạt hộ chiếu ngay
                         </a>
                         <button onclick="restartPageQuiz()" class="bg-slate-100 hover:bg-slate-200 text-academy-blue font-bold py-3.5 px-8 rounded-xl text-xs transition duration-200">
@@ -277,14 +426,21 @@
 
                 <!-- Right Registration Form (65% Area) -->
                 <form onsubmit="handleFormSubmit(event)" class="md:col-span-8 p-8 md:p-10 space-y-6 bg-white">
-                    <h4 class="text-base font-extrabold text-academy-blue border-b border-slate-100 pb-3">
-                        Thông Tin Đăng Ký Kích Hoạt Hộ Chiếu
-                    </h4>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                        <h4 class="text-base font-extrabold text-academy-blue">
+                            Thông Tin Đăng Ký Kích Hoạt Hộ Chiếu
+                        </h4>
+                        <!-- Luxury Alert Counter Badge -->
+                        <div class="inline-flex items-center space-x-2 bg-amber-50 border border-amber-200 text-amber-800 text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                            <span>Chỉ còn 8 suất đặc quyền tuần này</span>
+                        </div>
+                    </div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Họ và Tên Học sinh</label>
-                            <input type="text" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="Nguyễn Văn A">
+                            <input type="text" id="student-name-input" oninput="syncPassportName(this.value)" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="Nguyễn Văn A">
                         </div>
                         <div class="space-y-1">
                             <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Số Điện Thoại Liên Hệ</label>
@@ -308,12 +464,78 @@
                     </div>
 
                     <div class="pt-2">
-                        <button type="submit" class="w-full bg-orion-orange hover:bg-orion-orangeLight text-white font-extrabold py-4 px-6 rounded-xl shadow-md hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-200 text-xs tracking-wider uppercase">
+                        <button type="submit" class="shine-effect w-full bg-orion-orange hover:bg-orion-orangeLight text-white font-extrabold py-4 px-6 rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-200 text-xs tracking-wider uppercase">
                             XÁC NHẬN GỬI YÊU CẦU ĐẶT LỊCH HẸN
                         </button>
                     </div>
                 </form>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FAQ SECTION (Giải quyết rào cản trì hoãn & thông tin chi tiết) -->
+    <section id="faq-section" class="py-24 bg-white border-b border-slate-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-xs font-bold text-orion-orange tracking-widest uppercase bg-orange-50 px-3 py-1.5 rounded-full border border-orion-orange/10 inline-block">Hỏi Đáp Y Khoa</span>
+                <h2 class="text-3xl font-extrabold text-academy-blue tracking-tight">Giải Đáp Thắc Mắc Thường Gặp</h2>
+                <p class="text-sm text-slate-500 max-w-lg mx-auto">Mọi thông tin cần biết để bắt đầu hành trình nâng cấp bản thân an tâm, đúng chuẩn chuyên khoa.</p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4">
+                <!-- Accordion 1 -->
+                <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">1. Phụ huynh e ngại về vấn đề tài chính, chiến dịch có giải pháp hỗ trợ gì không?</span>
+                        <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                            Nha Khoa Orion đồng hành cùng chiến dịch mang đến chương trình hỗ trợ trả góp 0% lãi suất cùng các chính sách bảo lãnh tài chính ưu việt dành riêng cho Học sinh - Sinh viên. Gói "Student Smile Passport" cam kết không phát sinh bất kỳ khoản phụ phí ẩn nào ngoài phác đồ ban đầu đã được Phụ huynh thông qua.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Accordion 2 -->
+                <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">2. Việc chỉnh nha tại phòng khám Orion Vinhomes Q9 có làm gián đoạn lịch học của sinh viên?</span>
+                        <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                            Hoàn toàn không. Với phác đồ cá nhân hóa kỹ thuật số tiên tiến từ Orion, tần suất tái khám của bạn được tối ưu hóa chỉ còn từ 4 đến 6 tuần một lần. Phòng khám tại khu Vinhomes Grand Park, Quận 9 mở cửa linh hoạt cả ngoài giờ hành chính và cuối tuần để hỗ trợ các bạn trẻ điều phối lịch học tối đa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Accordion 3 -->
+                <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">3. Trình tự đăng ký kích hoạt và chụp phim CT Cone Beam 3D miễn phí diễn ra thế nào?</span>
+                        <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                            Sau khi hoàn tất biểu mẫu đăng ký phía trên, Ban liên lạc y khoa của Nha Khoa Orion sẽ gọi điện trực tiếp để hỗ trợ bạn đặt lịch hẹn rảnh nhất. Khi tới phòng khám, bạn chỉ cần xuất trình mã "Student Smile Passport" được cấp để thực hiện quy trình chụp X-quang CT 3D miễn phí trị giá 1.000.000đ và trò chuyện 1-1 với bác sĩ chuyên khoa chỉnh nha.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Accordion 4 -->
+                <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300">
+                    <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">4. Sự khác biệt cốt lõi giữa khay niềng Invisalign và mắc cài kim loại tại Orion?</span>
+                        <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                            Khay trong suốt Invisalign sở hữu ưu thế tuyệt đối về mặt thẩm mỹ khi đeo và có thể tháo lắp linh hoạt khi ăn uống, vệ sinh. Mắc cài truyền thống từ Orion lại mang đến hiệu suất dịch chuyển răng cơ học tối ưu với chi phí hợp lý hơn cho ngân sách sinh viên. Cả hai giải pháp đều được bác sĩ thiết lập phác đồ cá nhân hóa dựa trên dữ liệu scan 3D chính xác nhất.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -354,6 +576,27 @@
 
         </div>
     </footer>
+
+    <!-- SUCCESS MODAL (Thay thế window.alert để hoạt động tốt trên iFrame) -->
+    <div id="success-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-[#0A192F]/60 backdrop-blur-sm"></div>
+        <!-- Modal Content -->
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl relative z-10 border border-slate-100 text-center space-y-6">
+            <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-emerald-500 text-3xl font-bold">
+                ✓
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-extrabold text-[#0A192F]">Đăng Ký Thành Công!</h3>
+                <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                    ✨ Chúc mừng bạn đã đăng ký lịch hẹn thành công! Ban liên lạc của Nha Khoa Orion tại Vinhomes Grand Park sẽ liên hệ trực tiếp với bạn và Phụ huynh trong thời gian sớm nhất để hoàn thành thủ tục kích hoạt đặc quyền.
+                </p>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full bg-[#FD7608] hover:bg-[#FD811C] text-white font-extrabold py-3.5 px-6 rounded-xl text-xs tracking-wider uppercase transition-all duration-200 shadow-md shadow-orange-500/10">
+                Đóng
+            </button>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT FOR INTERACTIVE LANDING PAGE QUIZ -->
     <script>
@@ -485,8 +728,83 @@
 
         function handleFormSubmit(event) {
             event.preventDefault();
-            alert("✨ Chúc mừng bạn đã đăng ký lịch hẹn thành công! Ban liên lạc của Nha Khoa Orion tại Vinhomes Grand Park sẽ liên hệ trực tiếp với bạn và Phụ huynh trong thời gian sớm nhất để hoàn thành thủ tục kích hoạt đặc quyền.");
+            const modal = document.getElementById('success-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
             event.target.reset();
+            // Reset passport name too
+            syncPassportName("");
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        /* --- NEW LUXURY INTERACTIVE FUNCTIONS --- */
+
+        // 1. Reading Progress Indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressIndicator = document.getElementById('scroll-progress');
+            if (progressIndicator) {
+                progressIndicator.style.width = scrolled + '%';
+            }
+        });
+
+        // Add Progress Bar to Body on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const progress = document.createElement('div');
+            progress.id = 'scroll-progress';
+            progress.className = 'progress-indicator';
+            document.body.prepend(progress);
+        });
+
+        // 2. Live Passport Name Sync
+        function syncPassportName(value) {
+            const passportNameEl = document.getElementById('passport-holder-name');
+            if (passportNameEl) {
+                passportNameEl.innerText = value.trim() !== "" ? value.toUpperCase() : "HỘI VIÊN DANH DỰ";
+            }
+        }
+
+        // 5. Smooth FAQ Accordion Toggle
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            
+            // Toggle active styles on accordion container
+            const container = button.parentElement;
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.innerText = "+";
+                icon.style.transform = "rotate(0deg)";
+                container.classList.remove('border-orion-orange/30', 'shadow-md');
+            } else {
+                // Close all other accordions first
+                const allContents = document.querySelectorAll('.faq-content');
+                const allIcons = document.querySelectorAll('.faq-icon');
+                const allContainers = document.querySelectorAll('#faq-section .border');
+                
+                allContents.forEach(c => c.style.maxHeight = null);
+                allIcons.forEach(i => {
+                    i.innerText = "+";
+                    i.style.transform = "rotate(0deg)";
+                });
+                allContainers.forEach(con => con.classList.remove('border-orion-orange/30', 'shadow-md'));
+
+                // Open current accordion
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.innerText = "−";
+                icon.style.transform = "rotate(180deg)";
+                container.classList.add('border-orion-orange/30', 'shadow-md');
+            }
         }
     </script>
 </body>
