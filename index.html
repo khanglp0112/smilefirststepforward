@@ -14,6 +14,7 @@
             theme: {
                 extend: {
                     fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
                         manrope: ['Manrope', 'sans-serif'],
                     },
                     colors: {
@@ -189,12 +190,25 @@
                 </div>
             </a>
             
-            <!-- Đối tác Đồng hành (Sponsor Credit - Tích hợp link Orion ngoài tab mới đạt chuẩn Safe-Zone) -->
-            <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="flex items-center space-x-3 border-l border-slate-200 pl-6 hover:opacity-85 transition-all duration-150">
-                <span class="text-[9px] font-bold text-slate-400 tracking-wider uppercase leading-none block md:inline hidden mr-1">Bảo trợ chuyên môn</span>
-                <!-- Exact Official Logo Image to ensure absolutely zero distortion or re-creation -->
-                <img src="https://nhakhoaorion.vn/themes/nhakhoaorion.vn/assets/imgs/logo_header.png" alt="Nha Khoa Orion" class="h-10 w-auto object-contain" />
-            </a>
+            <!-- Right Actions: Language Switcher & Sponsor Credit -->
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <!-- Sleek dual language toggle buttons -->
+                <div class="inline-flex bg-slate-100/80 backdrop-blur-sm p-1 rounded-xl border border-slate-200/50">
+                    <button onclick="setLanguage('vi')" id="lang-btn-vi" class="px-2.5 py-1.5 rounded-lg text-[10px] font-extrabold tracking-wider transition-all duration-200 flex items-center space-x-1 bg-white text-orion-orange shadow-sm">
+                        <span>🇻🇳</span> <span>VI</span>
+                    </button>
+                    <button onclick="setLanguage('en')" id="lang-btn-en" class="px-2.5 py-1.5 rounded-lg text-[10px] font-extrabold tracking-wider transition-all duration-200 flex items-center space-x-1 text-slate-400 hover:text-slate-600">
+                        <span>🇬🇧</span> <span>EN</span>
+                    </button>
+                </div>
+
+                <!-- Đối tác Đồng hành (Sponsor Credit - Tích hợp link Orion ngoài tab mới đạt chuẩn Safe-Zone) -->
+                <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="flex items-center space-x-3 border-l border-slate-200 pl-4 md:pl-6 hover:opacity-85 transition-all duration-150">
+                    <span class="text-[9px] font-bold text-slate-400 tracking-wider uppercase leading-none block md:inline hidden mr-1" data-i18n="sponsor_prefix">Bảo trợ chuyên môn</span>
+                    <!-- Exact Official Logo Image to ensure absolutely zero distortion or re-creation -->
+                    <img src="https://nhakhoaorion.vn/themes/nhakhoaorion.vn/assets/imgs/logo_header.png" alt="Nha Khoa Orion" class="h-10 w-auto object-contain" />
+                </a>
+            </div>
         </div>
     </header>
 
@@ -206,21 +220,21 @@
             <div class="lg:col-span-7 space-y-6 reveal">
                 <div class="inline-flex items-center space-x-2 bg-orange-50 border border-orion-orangeLight/20 text-orion-orange text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider">
                     <span class="w-1.5 h-1.5 rounded-full bg-orion-orange animate-pulse"></span>
-                    <span>Sáng kiến học đường bởi IGC Tây Ninh</span>
+                    <span data-i18n="hero_badge">Sáng kiến học đường</span>
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-academy-blue leading-tight tracking-tight">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-academy-blue leading-tight tracking-tight" data-i18n="hero_title">
                     Nụ Cười Tự Tin Là <br>
                     <span class="text-orion-orange">Hồ Sơ Năng Lực</span> Đầu Tiên
                 </h1>
-                <p class="text-base md:text-lg text-slate-500 leading-relaxed max-w-xl font-medium">
+                <p class="text-base md:text-lg text-slate-500 leading-relaxed max-w-xl font-medium" data-i18n="hero_desc">
                     Điểm số và chứng chỉ là bệ phóng cho sự nghiệp trên giấy tờ. Nhưng một nụ cười rạng rỡ, khỏe mạnh mới chính là chiếc chìa khóa mở ra cánh cửa giao tiếp đầu tiên khi bạn trực tiếp bước vào môi trường chuyên nghiệp thực tế.
                 </p>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                    <a href="#quiz-hub" class="bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-orange-500/10 hover:shadow-orange-500/20 transition-all duration-200 text-center text-xs tracking-widest uppercase">
+                    <a href="#quiz-hub" class="bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-orange-500/10 hover:shadow-orange-500/20 transition-all duration-200 text-center text-xs tracking-widest uppercase" data-i18n="hero_btn_quiz">
                         Giải Mã Bản Đồ Nụ Cười
                     </a>
                     <!-- Dẫn link trực tiếp sang trang web đối tác an toàn không làm trôi khách -->
-                    <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="border border-slate-200 hover:border-orion-orange text-academy-blue hover:text-orion-orange font-bold py-4 px-8 rounded-xl transition-all duration-200 text-center text-xs tracking-widest uppercase bg-white">
+                    <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="border border-slate-200 hover:border-orion-orange text-academy-blue hover:text-orion-orange font-bold py-4 px-8 rounded-xl transition-all duration-200 text-center text-xs tracking-widest uppercase bg-white" data-i18n="hero_btn_orion">
                         Tìm hiểu Nha Khoa Orion
                     </a>
                 </div>
@@ -254,13 +268,13 @@
                         
                         <!-- Top Header: Accent Tag and Live Indicator -->
                         <div class="flex items-center justify-between z-10">
-                            <span class="text-[9px] font-bold text-orion-orange tracking-widest uppercase bg-orion-orange/10 px-2.5 py-1 rounded border border-orion-orange/20 backdrop-blur-md">CAMPAIGN HIGHLIGHT</span>
+                            <span class="text-[9px] font-bold text-orion-orange tracking-widest uppercase bg-orion-orange/10 px-2.5 py-1 rounded border border-orion-orange/20 backdrop-blur-md" data-i18n="hero_right_badge">CAMPAIGN HIGHLIGHT</span>
                             <span class="w-2 h-2 rounded-full bg-orion-orange animate-pulse"></span>
                         </div>
 
                         <!-- Big Idea Content - Positioned lower to showcase the radiant smile face, high transparency glassmorphism -->
                         <div class="mt-auto mb-3.5 p-4 bg-white/20 border border-orion-orange/20 backdrop-blur-[4px] rounded-xl space-y-1 z-10 transition-all duration-300 hover:border-orion-orange/40 hover:bg-white/30 shadow-sm">
-                            <span class="text-[9px] font-bold text-slate-700 tracking-wider block uppercase">Big Idea</span>
+                            <span class="text-[9px] font-bold text-slate-700 tracking-wider block uppercase" data-i18n="hero_right_big_idea">Big Idea</span>
                             <h3 class="text-xl font-black text-academy-blue tracking-tight leading-[1.2] font-manrope">
                                 Smile First,<br>
                                 <span class="bg-gradient-to-r from-orion-orange to-orion-orangeLight bg-clip-text text-transparent font-extrabold">Step Forward</span>
@@ -269,14 +283,14 @@
 
                         <!-- Tagline Block - Positioned at the bottom, matching transparent glassmorphism style -->
                         <div class="border border-orion-orange/20 bg-white/20 backdrop-blur-[4px] rounded-xl p-3.5 space-y-1 transition-all duration-300 hover:border-orion-orange/40 hover:bg-white/30 shadow-sm z-10">
-                            <span class="text-[8px] font-bold text-orion-orange uppercase tracking-widest block">Campaign Tagline</span>
-                            <p class="text-xs font-extrabold text-academy-blue leading-normal font-manrope italic">
+                            <span class="text-[8px] font-bold text-orion-orange uppercase tracking-widest block" data-i18n="hero_right_tagline_label">Campaign Tagline</span>
+                            <p class="text-xs font-extrabold text-academy-blue leading-normal font-manrope italic" data-i18n="hero_right_tagline">
                                 "Your Smile is Your First Portfolio."
                             </p>
                         </div>
                     </div>
 
-                    <p class="text-[11px] text-slate-400 font-medium mt-4">
+                    <p class="text-[11px] text-slate-400 font-medium mt-4" data-i18n="hero_img_note">
                         * Sứ mệnh đồng hành cùng học sinh, sinh viên tự tin bước vào tương lai rạng ngời.
                     </p>
                 </div>
@@ -292,29 +306,29 @@
                 
                 <!-- Left: Big Philosophy (Campaign Identity) -->
                 <div class="md:col-span-6 space-y-6 reveal">
-                    <span class="text-[10px] font-bold text-academy-blue tracking-widest uppercase block">Giải pháp cho "Academic FOMO"</span>
-                    <h2 class="text-3xl font-extrabold text-academy-blue leading-snug">
+                    <span class="text-[10px] font-bold text-academy-blue tracking-widest uppercase block" data-i18n="strat_tag">Giải pháp cho "Academic FOMO"</span>
+                    <h2 class="text-3xl font-extrabold text-academy-blue leading-snug" data-i18n="strat_title">
                         Phá bỏ vòng lặp trì hoãn, <br>Chủ động định hình tương lai chuyên nghiệp
                     </h2>
-                    <p class="text-slate-500 text-sm leading-relaxed">
+                    <p class="text-slate-500 text-sm leading-relaxed" data-i18n="strat_desc">
                         Học sinh - sinh viên thường ưu tiên đầu tư cho các giá trị học thuật ngắn hạn (bằng cấp, chứng chỉ) mà vô tình xem nhẹ sức khỏe diện mạo. Chỉnh nha bị lầm tưởng là một rào cản y tế gây tốn kém thời gian và chi phí, dẫn đến sự trì hoãn kéo dài. Chiến dịch của chúng tôi khuyến khích các bạn trẻ thay đổi tư duy: xem nụ cười khỏe đẹp như một phần tất yếu của thương hiệu cá nhân dài hạn.
                     </p>
                 </div>
 
                 <!-- Right: Orion's Scientific Support Role (Tạo ranh giới rạch ròi, đúng vị trí đối tác) -->
                 <div class="md:col-span-6 bg-[#F8F9FA] border border-slate-100 rounded-3xl p-8 space-y-6 reveal reveal-delay-200">
-                    <span class="text-[9px] font-bold text-orion-orange tracking-widest uppercase block">Vai trò đối tác chuyên môn</span>
-                    <h3 class="text-xl font-extrabold text-academy-blue">Nha Khoa Orion – Điểm Đỡ Khoa Học</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed">
+                    <span class="text-[9px] font-bold text-orion-orange tracking-widest uppercase block" data-i18n="partner_tag">Vai trò đối tác chuyên môn</span>
+                    <h3 class="text-xl font-extrabold text-academy-blue" data-i18n="partner_title">Nha Khoa Orion – Điểm Đỡ Khoa Học</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="partner_desc">
                         Để những thông điệp học đường không dừng lại ở mức cảm tính, **Nha Khoa Orion** (đại đô thị Vinhomes Grand Park, Quận 9) đồng hành cùng chiến dịch với tư cách nhà bảo trợ chuyên môn y khoa. Orion cung cấp các giải pháp chỉnh nha chuyên nghiệp, phác đồ cá nhân hóa 3D hiện đại và hỗ trợ tài chính học đường linh hoạt, biến quá trình niềng răng thành một hành trình trải nghiệm an tâm, nhẹ nhàng và đúng chuẩn y khoa.
                     </p>
                     <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="flex items-center space-x-3 text-xs font-bold text-academy-blue">
-                            <span>✓ Tri thức y học đạt chuẩn</span>
+                            <span data-i18n="partner_bullet1">✓ Tri thức y học đạt chuẩn</span>
                             <span class="text-slate-300">|</span>
-                            <span>✓ Công nghệ CT Cone Beam 3D</span>
+                            <span data-i18n="partner_bullet2">✓ Công nghệ CT Cone Beam 3D</span>
                         </div>
-                        <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="text-orion-orange hover:underline text-xs font-extrabold flex items-center transition-all duration-150">
+                        <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="text-orion-orange hover:underline text-xs font-extrabold flex items-center transition-all duration-150" data-i18n="partner_link">
                             Ghé thăm website Orion →
                         </a>
                     </div>
@@ -330,9 +344,9 @@
             
             <!-- Section Header -->
             <div class="text-center space-y-4 mb-16 reveal">
-                <span class="text-xs font-bold text-orion-orange tracking-widest uppercase bg-orange-50 px-3 py-1.5 rounded-full border border-orion-orange/10 inline-block">Bứt Phá Bản Thân</span>
-                <h2 class="text-3xl font-extrabold text-academy-blue tracking-tight">Lợi Ích Chỉnh Nha Từ Góc Nhìn Chiến Dịch</h2>
-                <p class="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
+                <span class="text-xs font-bold text-orion-orange tracking-widest uppercase bg-orange-50 px-3 py-1.5 rounded-full border border-orion-orange/10 inline-block" data-i18n="benefits_badge">Bứt Phá Bản Thân</span>
+                <h2 class="text-3xl font-extrabold text-academy-blue tracking-tight" data-i18n="benefits_title">Lợi Ích Chỉnh Nha Từ Góc Nhìn Chiến Dịch</h2>
+                <p class="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed" data-i18n="benefits_sub">
                     Không chỉ dừng lại ở việc thay đổi diện mạo y khoa thông thường, hành trình đồng hành cùng chiến dịch mang đến những giá trị bền vững để định hình tương lai.
                 </p>
             </div>
@@ -346,13 +360,13 @@
                         <div class="w-12 h-12 bg-orange-50 text-orion-orange rounded-2xl flex items-center justify-center text-xl font-bold group-hover:scale-110 group-hover:bg-orion-orange group-hover:text-white transition-all duration-300 shadow-sm">
                             ✨
                         </div>
-                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300">Kiến Tạo Thương Hiệu</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300" data-i18n="benefit1_title">Kiến Tạo Thương Hiệu</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium" data-i18n="benefit1_desc">
                             Nụ cười khỏe đẹp chính là "Hồ Sơ Năng Lực" sống động nhất. Giúp bạn tự tin gây ấn tượng mạnh mẽ ban đầu trước nhà tuyển dụng, ban giám khảo hay đối tác trong giao tiếp chuyên nghiệp.
                         </p>
                     </div>
                     <div class="border-t border-slate-100 pt-4 mt-6 group-hover:border-orion-orange/20 transition-colors duration-300">
-                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Thương hiệu cá nhân</span>
+                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300" data-i18n="benefit1_footer">Thương hiệu cá nhân</span>
                     </div>
                 </div>
 
@@ -362,13 +376,13 @@
                         <div class="w-12 h-12 bg-orange-50 text-orion-orange rounded-2xl flex items-center justify-center text-xl font-bold group-hover:scale-110 group-hover:bg-orion-orange group-hover:text-white transition-all duration-300 shadow-sm">
                             🩺
                         </div>
-                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300">Bảo Vệ Sức Khỏe</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300" data-i18n="benefit2_title">Bảo Vệ Sức Khỏe</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium" data-i18n="benefit2_desc">
                             Căn chỉnh khớp cắn đạt chuẩn giúp bảo vệ khớp thái dương hàm, cải thiện khả năng phát âm rõ ràng khi thuyết trình học đường và duy trì sức khỏe răng miệng tối ưu lâu dài.
                         </p>
                     </div>
                     <div class="border-t border-slate-100 pt-4 mt-6 group-hover:border-orion-orange/20 transition-colors duration-300">
-                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Y khoa chuẩn mực</span>
+                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300" data-i18n="benefit2_footer">Y khoa chuẩn mực</span>
                     </div>
                 </div>
 
@@ -378,13 +392,13 @@
                         <div class="w-12 h-12 bg-orange-50 text-orion-orange rounded-2xl flex items-center justify-center text-xl font-bold group-hover:scale-110 group-hover:bg-orion-orange group-hover:text-white transition-all duration-300 shadow-sm">
                             ⚡
                         </div>
-                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300">Tháo Gỡ Trì Hoãn</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300" data-i18n="benefit3_title">Tháo Gỡ Trì Hoãn</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium" data-i18n="benefit3_desc">
                             Xóa bỏ hoàn toàn tâm lý trì hoãn "chờ đến lúc đi làm mới niềng răng". Việc chủ động đầu tư sớm cho diện mạo giúp các bạn trẻ mở rộng các cơ hội bứt phá thành công hơn.
                         </p>
                     </div>
                     <div class="border-t border-slate-100 pt-4 mt-6 group-hover:border-orion-orange/20 transition-colors duration-300">
-                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Chủ động nâng cấp</span>
+                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300" data-i18n="benefit3_footer">Chủ động nâng cấp</span>
                     </div>
                 </div>
 
@@ -394,13 +408,13 @@
                         <div class="w-12 h-12 bg-orange-50 text-orion-orange rounded-2xl flex items-center justify-center text-xl font-bold group-hover:scale-110 group-hover:bg-orion-orange group-hover:text-white transition-all duration-300 shadow-sm">
                             🤝
                         </div>
-                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300">Trải Nghiệm An Tâm</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                        <h3 class="text-lg font-bold text-academy-blue group-hover:text-orion-orange transition-colors duration-300" data-i18n="benefit4_title">Trải Nghiệm An Tâm</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium" data-i18n="benefit4_desc">
                             Được định hướng thông tin khách quan, tiếp cận kiến thức chỉnh nha khoa học từ đối tác chuyên môn uy tín cùng nhiều giải pháp tối ưu chi phí học sinh - sinh viên.
                         </p>
                     </div>
                     <div class="border-t border-slate-100 pt-4 mt-6 group-hover:border-orion-orange/20 transition-colors duration-300">
-                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300">Đồng hành tin cậy</span>
+                        <span class="text-[10px] font-bold text-orion-orange uppercase tracking-wider group-hover:tracking-widest transition-all duration-300" data-i18n="benefit4_footer">Đồng hành tin cậy</span>
                     </div>
                 </div>
 
@@ -415,18 +429,18 @@
             <!-- Section Header -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 reveal">
                 <div class="lg:col-span-8 space-y-4">
-                    <span class="text-xs font-bold text-orion-orange tracking-widest uppercase bg-orange-50 px-3 py-1.5 rounded-full border border-orion-orange/10 inline-block">Sức Mạnh Truyền Cảm Hứng</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-academy-blue tracking-tight leading-tight">
+                    <span class="text-xs font-bold text-orion-orange tracking-widest uppercase bg-orange-50 px-3 py-1.5 rounded-full border border-orion-orange/10 inline-block" data-i18n="gallery_badge">Sức Mạnh Truyền Cảm Hứng</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-academy-blue tracking-tight leading-tight" data-i18n="gallery_title">
                         Góc Truyền Cảm Hứng:<br>Nụ Cười Tự Tin, Tương Lai Bứt Phá
                     </h2>
-                    <p class="text-sm md:text-base text-slate-500 max-w-2xl leading-relaxed">
+                    <p class="text-sm md:text-base text-slate-500 max-w-2xl leading-relaxed" data-i18n="gallery_sub">
                         Chỉnh nha không chỉ chỉnh lại những khớp răng chưa đều, mà là quá trình khai phá sự tự tin vốn có. Cùng ngắm nhìn nguồn năng lượng tích cực từ những nụ cười tỏa sáng – động lực mạnh mẽ giúp các bạn học sinh, sinh viên chủ động làm chủ thương hiệu cá nhân của riêng mình.
                     </p>
                 </div>
                 <div class="lg:col-span-4 flex lg:justify-end">
                     <div class="flex items-center space-x-2 text-xs font-bold text-academy-blue">
                         <span class="inline-block w-2.5 h-2.5 rounded-full bg-orion-orange"></span>
-                        <span>Đồng hành bởi Nha Khoa Orion</span>
+                        <span data-i18n="gallery_partner">Đồng hành bởi Nha Khoa Orion</span>
                     </div>
                 </div>
             </div>
@@ -447,16 +461,16 @@
                     <!-- Content Overlaid -->
                     <div class="p-8 relative z-20 space-y-4">
                         <div class="inline-flex items-center space-x-2 bg-orion-orange/25 backdrop-blur-md text-white border border-orion-orange/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                            <span>🎓 Nụ Cười Thuyết Trình</span>
+                            <span data-i18n="g_card1_badge">🎓 Nụ Cười Thuyết Trình</span>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-extrabold text-white leading-tight">
+                        <h3 class="text-xl md:text-2xl font-extrabold text-white leading-tight" data-i18n="g_card1_title">
                             Tự tin thuyết trình & Giao tiếp trước đám đông
                         </h3>
-                        <p class="text-xs text-slate-200 leading-relaxed max-w-lg">
+                        <p class="text-xs text-slate-200 leading-relaxed max-w-lg" data-i18n="g_card1_desc">
                             Chỉnh nha hiện đại giúp giải phóng rào cản tâm lý e ngại, hỗ trợ học sinh và sinh viên rèn luyện phong thái đĩnh đạc khi trình bày các dự án học thuật, tự tin biểu đạt ý tưởng cá nhân một cách mạch lạc, cuốn hút trước tập thể.
                         </p>
                         <div class="border-t border-white/10 pt-4 flex items-center justify-between text-[11px] text-orion-orange font-bold uppercase tracking-wider">
-                            <span>Sức mạnh từ sự chủ động</span>
+                            <span data-i18n="g_card1_footer">Sức mạnh từ sự chủ động</span>
                             <span class="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
                         </div>
                     </div>
@@ -472,16 +486,16 @@
                     
                     <div class="p-8 relative z-20 space-y-4">
                         <div class="inline-flex items-center space-x-2 bg-blue-500/25 backdrop-blur-md text-white border border-blue-500/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                            <span>⚡ Hồ Sơ Ấn Tượng</span>
+                            <span data-i18n="g_card2_badge">⚡ Hồ Sơ Ấn Tượng</span>
                         </div>
-                        <h3 class="text-xl font-extrabold text-white leading-tight">
+                        <h3 class="text-xl font-extrabold text-white leading-tight" data-i18n="g_card2_title">
                             Kiến tạo thương hiệu cá nhân bền vững
                         </h3>
-                        <p class="text-xs text-slate-200 leading-relaxed">
+                        <p class="text-xs text-slate-200 leading-relaxed" data-i18n="g_card2_desc">
                             Đầu tư chăm sóc sức khỏe nụ cười từ sớm là bước chuẩn bị chiến lược lâu dài, giúp các bạn trẻ xây dựng diện mạo chỉn chu và ghi điểm ấn tượng, tự tin trong các buổi phỏng vấn tuyển dụng hay gặp gỡ đối tác tương lai.
                         </p>
                         <div class="border-t border-white/10 pt-4 flex items-center justify-between text-[11px] text-orion-orange font-bold uppercase tracking-wider">
-                            <span>Đầu tư thông thái dài hạn</span>
+                            <span data-i18n="g_card2_footer">Đầu tư thông thái dài hạn</span>
                             <span class="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
                         </div>
                     </div>
@@ -497,12 +511,12 @@
                     
                     <div class="p-8 relative z-20 space-y-4">
                         <div class="inline-flex items-center space-x-2 bg-emerald-500/25 backdrop-blur-md text-white border border-emerald-500/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                            <span>🩺 Công Nghệ Số 3D</span>
+                            <span data-i18n="g_card3_badge">🩺 Công Nghệ Số 3D</span>
                         </div>
-                        <h3 class="text-lg font-bold text-white leading-tight">
-                            Phác đồ kỹ thuật số cá nhân hóa
+                        <h3 class="text-lg font-bold text-white leading-tight" data-i18n="g_card3_title">
+                             Phác đồ kỹ thuật số cá nhân hóa
                         </h3>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="g_card3_desc">
                             Đối tác chuyên môn Nha Khoa Orion ứng dụng các công nghệ y khoa hiện đại chuẩn mực như quét cấu trúc răng 3D, mô phỏng trước kết quả điều trị giúp bạn hoàn toàn an tâm và chủ động theo dõi sát sao từng mốc biến đổi của mình.
                         </p>
                     </div>
@@ -518,12 +532,12 @@
                     
                     <div class="p-8 relative z-20 space-y-4">
                         <div class="inline-flex items-center space-x-2 bg-orange-500/25 backdrop-blur-md text-white border border-orange-500/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                            <span>🤝 Tự Tin Kết Nối</span>
+                            <span data-i18n="g_card4_badge">🤝 Tự Tin Kết Nối</span>
                         </div>
-                        <h3 class="text-xl font-extrabold text-white leading-tight">
+                        <h3 class="text-xl font-extrabold text-white leading-tight" data-i18n="g_card4_title">
                             Xây dựng kết nối & Hòa nhập cộng đồng
                         </h3>
-                        <p class="text-xs text-slate-200 leading-relaxed">
+                        <p class="text-xs text-slate-200 leading-relaxed" data-i18n="g_card4_desc">
                             Sự tự tin trong giao tiếp giúp rút ngắn khoảng cách thế hệ và bạn bè, khuyến khích tinh thần chủ động tham gia các phong trào trường lớp, câu lạc bộ và các dự án xã hội ý nghĩa mà không gặp bất kỳ rào cản tâm lý nào.
                         </p>
                     </div>
@@ -533,7 +547,7 @@
 
             <!-- Bottom Note: Reaffirming Medical Guidelines -->
             <div class="mt-12 bg-orange-50/50 border border-orion-orange/10 p-6 rounded-2xl text-center max-w-3xl mx-auto reveal">
-                <p class="text-xs text-slate-500 leading-relaxed font-medium">
+                <p class="text-xs text-slate-500 leading-relaxed font-medium" data-i18n="gallery_note">
                     💡 <strong>Lưu ý từ chiến dịch:</strong> Để tôn trọng sự đa dạng diện mạo và bảo đảm sức khỏe y học học đường, chúng tôi hoàn toàn không sử dụng hình ảnh "Trước - Sau" gây áp lực tâm lý ngoại hình. Mỗi người sở hữu một vẻ đẹp riêng, chỉnh nha chính là cách giúp bạn chăm sóc sức khỏe cấu trúc răng miệng chuẩn khoa học và tối ưu nụ cười tự tin vốn có.
                 </p>
             </div>
@@ -545,9 +559,9 @@
     <section id="quiz-hub" class="py-24 bg-[#F8F9FA] border-b border-slate-100">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center space-y-4 mb-16 reveal">
-                <span class="text-xs font-bold text-orion-orange tracking-widest uppercase">Ứng dụng thực tế ảo</span>
-                <h2 class="text-3xl font-extrabold text-academy-blue tracking-tight">Trạm Khảo Sát "Bản Đồ Nụ Cười"</h2>
-                <p class="text-sm text-slate-400 max-w-lg mx-auto">Vượt qua các lầm tưởng răng miệng để nhận diện đúng giá trị đầu tư cho tương lai sự nghiệp.</p>
+                <span class="text-xs font-bold text-orion-orange tracking-widest uppercase" data-i18n="quiz_badge">Ứng dụng thực tế ảo</span>
+                <h2 class="text-3xl font-extrabold text-academy-blue tracking-tight" data-i18n="quiz_title">Trạm Khảo Sát "Bản Đồ Nụ Cười"</h2>
+                <p class="text-sm text-slate-400 max-w-lg mx-auto" data-i18n="quiz_sub">Vượt qua các lầm tưởng răng miệng để nhận diện đúng giá trị đầu tư cho tương lai sự nghiệp.</p>
             </div>
 
             <!-- QUIZ CONTAINER CARD -->
@@ -557,12 +571,12 @@
                 <div id="quiz-screen-welcome" class="flex flex-col justify-between h-full space-y-10">
                     <div class="text-center py-6 space-y-4">
                         <span class="text-5xl">🎟️</span>
-                        <h3 class="text-2xl font-extrabold text-academy-blue">Giải Mật Định Kiến Chỉnh Nha</h3>
-                        <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">
+                        <h3 class="text-2xl font-extrabold text-academy-blue" data-i18n="quiz_welcome_title">Giải Mật Định Kiến Chỉnh Nha</h3>
+                        <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed" data-i18n="quiz_welcome_desc">
                             Chỉ với 3 câu hỏi trắc nghiệm nhanh, bạn sẽ tháo gỡ hoàn toàn các rào cản tâm lý răng miệng và mở khóa tấm thẻ kỹ thuật số "Smile Ambassador Passport" được chứng thực đồng hành cùng chiến dịch.
                         </p>
                     </div>
-                    <button onclick="startPageQuiz()" class="w-full md:w-auto md:mx-auto bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-4 px-12 rounded-2xl shadow-md shadow-orange-500/10 hover:shadow-orange-500/20 transition duration-200 text-xs tracking-widest uppercase">
+                    <button onclick="startPageQuiz()" class="w-full md:w-auto md:mx-auto bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-4 px-12 rounded-2xl shadow-md shadow-orange-500/10 hover:shadow-orange-500/20 transition duration-200 text-xs tracking-widest uppercase" data-i18n="quiz_start_btn">
                         BẮT ĐẦU KHẢO SÁT
                     </button>
                 </div>
@@ -603,8 +617,8 @@
                 <!-- QUIZ SCREEN 3: RESULT SCREEN -->
                 <div id="quiz-screen-result" class="hidden text-center space-y-8 py-6">
                     <span class="text-5xl animate-[bounce_1.5s_infinite]">🎉</span>
-                    <h3 class="text-2xl font-extrabold text-academy-blue">TƯ DUY CHIẾN LƯỢC ĐÃ ĐƯỢC KHAI PHÁ!</h3>
-                    <p class="text-slate-500 text-sm max-w-lg mx-auto">
+                    <h3 class="text-2xl font-extrabold text-academy-blue" data-i18n="quiz_result_title">TƯ DUY CHIẾN LƯỢC ĐÃ ĐƯỢC KHAI PHÁ!</h3>
+                    <p class="text-slate-500 text-sm max-w-lg mx-auto" data-i18n="quiz_result_desc">
                         Bạn đã xuất sắc tháo gỡ hoàn toàn các lầm tưởng và mở khóa thành công tấm thẻ đồng hành kỹ thuật số đặc quyền.
                     </p>
                     
@@ -634,8 +648,8 @@
                                     </svg>
                                 </span>
                                 <div>
-                                    <h4 class="text-[8px] font-mono tracking-widest text-orion-orange uppercase leading-none mb-1">BẢO TRỢ CHUYÊN MÔN HỌC ĐƯỜNG</h4>
-                                    <span class="text-[10px] font-extrabold text-slate-100 uppercase tracking-wider">NHA KHOA ORION</span>
+                                    <h4 class="text-[8px] font-mono tracking-widest text-orion-orange uppercase leading-none mb-1" data-i18n="pass_partner_tag">CHIẾN DỊCH HỌC ĐƯỜNG</h4>
+                                    <span class="text-[10px] font-extrabold text-slate-100 uppercase tracking-wider" data-i18n="pass_partner_name">SMILE FIRST, STEP FORWARD</span>
                                 </div>
                             </div>
                             <div class="text-right">
@@ -647,14 +661,14 @@
                         <!-- Card Body -->
                         <div class="space-y-4 relative z-10">
                             <div>
-                                <span class="text-[8px] font-mono text-slate-400 block uppercase tracking-wider">CHỦ SỞ HỮU HỘ CHIẾU / HOLDER</span>
+                                <span class="text-[8px] font-mono text-slate-400 block uppercase tracking-wider" data-i18n="pass_holder_label">CHỦ SỞ HỮU HỘ CHIẾU / HOLDER</span>
                                 <p id="passport-holder-name" class="text-base font-extrabold text-white tracking-wide uppercase mt-1">HỘI VIÊN DANH DỰ</p>
                             </div>
                             
                             <div>
-                                <span class="text-[8px] font-mono text-slate-400 block uppercase tracking-wider">CHỨNG NHẬN CHIẾN DỊCH / CERTIFICATE</span>
+                                <span class="text-[8px] font-mono text-slate-400 block uppercase tracking-wider" data-i18n="pass_cert_label">CHỨNG NHẬN CHIẾN DỊCH / CERTIFICATE</span>
                                 <p class="text-xs font-bold text-orion-orange mt-0.5">SMILE AMBASSADOR PASSPORT</p>
-                                <p class="text-[10px] text-slate-300 leading-relaxed mt-1">
+                                <p class="text-[10px] text-slate-300 leading-relaxed mt-1" data-i18n="pass_desc">
                                     ✓ Chứng nhận hoàn thành hành trình giải mã định kiến, tháo gỡ rào cản trì hoãn diện mạo học đường.<br>
                                     ✓ Nhận cẩm nang số "Smile First Checklist" - Bộ hướng dẫn xây dựng thương hiệu cá nhân từ nụ cười tự tin.<br>
                                     ✓ Đồng hành cùng thông điệp tích cực, chủ động đầu tư cho bản thân chuẩn y khoa học đường.
@@ -665,8 +679,8 @@
                         <!-- Card Footer -->
                         <div class="flex justify-between items-end border-t border-slate-800 pt-4 relative z-10 text-[9px]">
                             <div class="text-slate-400">
-                                <span class="block text-[7px] font-mono">PHẠM VI ÁP DỤNG / SCOPE:</span>
-                                <span class="font-semibold text-slate-200">Trực tuyến & Sự kiện học đường</span>
+                                <span class="block text-[7px] font-mono" data-i18n="pass_scope_label">PHẠM VI ÁP DỤNG / SCOPE:</span>
+                                <span class="font-semibold text-slate-200" data-i18n="pass_scope_val">Trực tuyến & Sự kiện học đường</span>
                             </div>
                             <!-- Holographic Star Seal -->
                             <div class="flex items-center space-x-1.5 bg-orion-orange/15 border border-orion-orange/30 px-2 py-1 rounded-md text-orion-orange font-extrabold tracking-widest uppercase">
@@ -676,10 +690,10 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#register-form" class="bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-3.5 px-8 rounded-xl text-xs tracking-wider uppercase shadow-lg shadow-orange-500/20 transition-all duration-150 shine-effect">
+                        <a href="#register-form" class="bg-orion-orange hover:bg-orion-orangeLight text-white font-bold py-3.5 px-8 rounded-xl text-xs tracking-wider uppercase shadow-lg shadow-orange-500/20 transition-all duration-150 shine-effect" data-i18n="quiz_result_btn_activate">
                             Kích hoạt thẻ đồng hành ngay
                         </a>
-                        <button onclick="restartPageQuiz()" class="bg-slate-100 hover:bg-slate-200 text-academy-blue font-bold py-3.5 px-8 rounded-xl text-xs transition duration-200">
+                        <button onclick="restartPageQuiz()" class="bg-slate-100 hover:bg-slate-200 text-academy-blue font-bold py-3.5 px-8 rounded-xl text-xs transition duration-200" data-i18n="quiz_result_btn_retry">
                             Thực hiện lại khảo sát
                         </button>
                     </div>
@@ -698,22 +712,22 @@
                 <div class="md:col-span-4 bg-academy-blue p-8 flex flex-col justify-between text-white relative">
                     <div class="absolute inset-0 bg-gradient-to-br from-orion-orange/20 to-transparent pointer-events-none"></div>
                     <div class="space-y-4 relative z-10">
-                        <span class="text-[9px] font-bold text-orion-orange tracking-widest uppercase block">Đăng ký đồng hành</span>
-                        <h3 class="text-2xl font-extrabold leading-tight">Mở Khóa <br>Nụ Cười Sáng</h3>
+                        <span class="text-[9px] font-bold text-orion-orange tracking-widest uppercase block" data-i18n="form_left_badge">Đăng ký đồng hành</span>
+                        <h3 class="text-2xl font-extrabold leading-tight" data-i18n="form_left_title">Mở Khóa <br>Nụ Cười Sáng</h3>
                         <div class="space-y-3 pt-2 text-[11px] text-slate-300 leading-relaxed">
-                            <p class="font-bold text-white text-xs">1 ĐĂNG KÝ - 2 ĐẶC QUYỀN:</p>
+                            <p class="font-bold text-white text-xs" data-i18n="form_left_header">1 ĐĂNG KÝ - 2 ĐẶC QUYỀN:</p>
                             <div class="flex items-start space-x-2">
                                 <span class="text-orion-orange font-bold">✓</span>
-                                <span>Nhận ngay Cẩm nang số <strong class="text-white">"Smile First Checklist"</strong> để xây dựng thương hiệu cá nhân qua nụ cười.</span>
+                                <span data-i18n="form_left_item1">Nhận ngay Cẩm nang số <strong class="text-white">"Smile First Checklist"</strong> để xây dựng thương hiệu cá nhân qua nụ cười.</span>
                             </div>
                             <div class="flex items-start space-x-2">
                                 <span class="text-orion-orange font-bold">✓</span>
-                                <span>Đồng thời đặt lịch tư vấn & thiết kế nụ cười <strong class="text-white">1-1 miễn phí</strong> cùng bác sĩ chuyên khoa tại đối tác <strong class="text-white">Nha Khoa Orion</strong>.</span>
+                                <span data-i18n="form_left_item2">Đồng thời đặt lịch tư vấn & thiết kế nụ cười <strong class="text-white">1-1 miễn phí</strong> cùng bác sĩ chuyên khoa tại đối tác <strong class="text-white">Nha Khoa Orion</strong>.</span>
                             </div>
                         </div>
                     </div>
                     <!-- Link dẫn thẳng tới Orion ở footer của form -->
-                    <div class="text-[9px] text-slate-400 pt-6 border-t border-slate-800 relative z-10 leading-relaxed">
+                    <div class="text-[9px] text-slate-400 pt-6 border-t border-slate-800 relative z-10 leading-relaxed" data-i18n="form_left_footer">
                         * Cam kết bảo mật dữ liệu học tập, đóng góp ý kiến nâng cao nhận thức răng miệng học đường cùng đối tác chuyên môn <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="text-orion-orange hover:underline font-bold">Nha Khoa Orion</a>.
                     </div>
                 </div>
@@ -721,37 +735,37 @@
                 <!-- Right Registration Form (65% Area) -->
                 <form onsubmit="handleFormSubmit(event)" class="md:col-span-8 p-8 md:p-10 space-y-6 bg-white">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
-                        <h4 class="text-base font-extrabold text-academy-blue">
+                        <h4 class="text-base font-extrabold text-academy-blue" data-i18n="form_right_title">
                             Đăng Ký Đồng Hành & Tư Vấn Chuẩn Y Khoa
                         </h4>
                         <!-- Luxury Alert Counter Badge -->
                         <div class="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-200 text-emerald-800 text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                            <span>Hơn 500+ học sinh, sinh viên đã tham gia</span>
+                            <span data-i18n="form_right_badge">Hơn 500+ học sinh, sinh viên đã tham gia</span>
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
-                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Họ và Tên Học sinh / Sinh viên</label>
-                            <input type="text" id="student-name-input" oninput="syncPassportName(this.value)" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="Nguyễn Văn A">
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="form_label_name">Họ và Tên Học sinh / Sinh viên</label>
+                            <input type="text" id="student-name-input" oninput="syncPassportName(this.value)" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="Nguyễn Văn A" data-i18n-placeholder="form_placeholder_name">
                         </div>
                         <div class="space-y-1">
-                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Số Điện Thoại Liên Hệ</label>
-                            <input type="tel" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="0901234567">
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="form_label_phone">Số Điện Thoại Liên Hệ</label>
+                            <input type="tel" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="0901234567" data-i18n-placeholder="form_placeholder_phone">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
-                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Địa chỉ Email</label>
-                            <input type="email" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="nguyenvana@gmail.com">
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="form_label_email">Địa chỉ Email</label>
+                            <input type="email" required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none transition duration-150 font-medium text-slate-800" placeholder="nguyenvana@gmail.com" data-i18n-placeholder="form_placeholder_email">
                         </div>
                         <div class="space-y-1">
-                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Hình thức nhận tư vấn với Orion</label>
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="form_label_method">Hình thức nhận tư vấn với Orion</label>
                             <select required class="w-full border border-slate-200 focus:border-orion-orange focus:ring-1 focus:ring-orion-orange rounded-xl px-4 py-3 text-xs outline-none bg-white transition duration-150 font-medium text-slate-800">
-                                <option value="direct">Tư vấn trực tiếp 1-1 & Quét cấu trúc răng (Vinhomes Grand Park, Q.9)</option>
-                                <option value="online">Tư vấn trực tuyến từ xa (Qua cuộc gọi điện thoại / Zalo)</option>
+                                <option data-i18n="form_opt_direct" value="direct">Tư vấn trực tiếp 1-1 & Quét cấu trúc răng (Vinhomes Grand Park, Q.9)</option>
+                                <option data-i18n="form_opt_online" value="online">Tư vấn trực tuyến từ xa (Qua cuộc gọi điện thoại / Zalo)</option>
                             </select>
                         </div>
                     </div>
@@ -760,20 +774,20 @@
                     <div class="pt-2 space-y-3">
                         <label class="flex items-start space-x-3 cursor-pointer group">
                             <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded border-slate-300 text-orion-orange focus:ring-orion-orange">
-                            <span class="text-xs text-slate-500 leading-tight font-medium group-hover:text-slate-800 transition duration-150">
+                            <span class="text-xs text-slate-500 leading-tight font-medium group-hover:text-slate-800 transition duration-150" data-i18n="form_check_newsletter">
                                 Đồng ý nhận cẩm nang <strong class="text-orion-darkBrown font-bold">"Smile First Checklist"</strong> hướng dẫn xây dựng thương hiệu cá nhân qua email/SĐT.
                             </span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer group">
                             <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded border-slate-300 text-orion-orange focus:ring-orion-orange">
-                            <span class="text-xs text-slate-500 leading-tight font-medium group-hover:text-slate-800 transition duration-150">
+                            <span class="text-xs text-slate-500 leading-tight font-medium group-hover:text-slate-800 transition duration-150" data-i18n="form_check_appointment">
                                 Đồng ý đặt lịch hẹn tư vấn và lập phác đồ răng miệng 1-1 miễn phí với đối tác chuyên môn <strong class="text-orion-orange font-bold">Nha Khoa Orion</strong>.
                             </span>
                         </label>
                     </div>
 
                     <div class="pt-2">
-                        <button type="submit" class="shine-effect w-full bg-orion-orange hover:bg-orion-orangeLight text-white font-extrabold py-4 px-6 rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-200 text-xs tracking-wider uppercase">
+                        <button type="submit" class="shine-effect w-full bg-orion-orange hover:bg-orion-orangeLight text-white font-extrabold py-4 px-6 rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-200 text-xs tracking-wider uppercase" data-i18n="form_submit_btn">
                             KÍCH HOẠT ĐĂNG KÝ ĐỒNG HÀNH
                         </button>
                     </div>
@@ -787,9 +801,9 @@
     <section id="faq-section" class="py-24 bg-white border-b border-slate-50">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center space-y-4 mb-16 reveal">
-                <span class="text-xs font-bold text-orion-orange tracking-widest uppercase bg-orange-50 px-3 py-1.5 rounded-full border border-orion-orange/10 inline-block">Hỏi Đáp Định Hướng</span>
-                <h2 class="text-3xl font-extrabold text-academy-blue tracking-tight">Giải Đáp Thắc Mắc Thường Gặp</h2>
-                <p class="text-sm text-slate-500 max-w-lg mx-auto">Mọi thông tin cần biết để bắt đầu hành trình nâng cấp bản thân an tâm, đúng hướng và chuẩn khoa học.</p>
+                <span class="text-xs font-bold text-orion-orange tracking-widest uppercase bg-orange-50 px-3 py-1.5 rounded-full border border-orion-orange/10 inline-block" data-i18n="faq_badge">Hỏi Đáp Định Hướng</span>
+                <h2 class="text-3xl font-extrabold text-academy-blue tracking-tight" data-i18n="faq_title">Giải Đáp Thắc Mắc Thường Gặp</h2>
+                <p class="text-sm text-slate-500 max-w-lg mx-auto" data-i18n="faq_sub">Mọi thông tin cần biết để bắt đầu hành trình nâng cấp bản thân an tâm, đúng hướng và chuẩn khoa học.</p>
             </div>
 
             <!-- Accordion List -->
@@ -797,11 +811,11 @@
                 <!-- Accordion 1 -->
                 <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300 reveal reveal-delay-100">
                     <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
-                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">1. Làm thế nào để học sinh - sinh viên tự nhận biết tình trạng răng miệng hiện tại có cần can thiệp chỉnh nha hay không?</span>
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue" data-i18n="faq1_q">1. Làm thế nào để học sinh - sinh viên tự nhận biết tình trạng răng miệng hiện tại có cần can thiệp chỉnh nha hay không?</span>
                         <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
                     </button>
                     <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
-                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100" data-i18n="faq1_a">
                             Bạn có thể tự quan sát các dấu hiệu như khớp cắn chưa chuẩn xác, răng mọc khấp khểnh, thưa, hô hoặc móm nhẹ khi cười trước gương. Tuy nhiên, để nhận diện chính xác và xây dựng phương án khắc phục an toàn, các bạn trẻ nên nhận tham vấn trực tiếp từ bác sĩ chuyên khoa tại cơ sở của đối tác chuyên môn Nha Khoa Orion bằng công nghệ quét cấu trúc xương hàm hiện đại.
                         </p>
                     </div>
@@ -810,11 +824,11 @@
                 <!-- Accordion 2 -->
                 <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300 reveal reveal-delay-200">
                     <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
-                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">2. Liệu việc chỉnh nha tại cơ sở phòng khám của đối tác có gây ảnh hưởng đến lịch học tập của học sinh - sinh viên?</span>
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue" data-i18n="faq2_q">2. Liệu việc chỉnh nha tại cơ sở phòng khám của đối tác có gây ảnh hưởng đến lịch học tập của học sinh - sinh viên?</span>
                         <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
                     </button>
                     <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
-                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100" data-i18n="faq2_a">
                             Hoàn toàn không. Nhờ các phác đồ kỹ thuật số cá nhân hóa, tần suất thăm khám trực tiếp hiện nay đã được tối ưu hóa đáng kể (chỉ từ 4 đến 6 tuần một lần). Đồng thời, cơ sở của đối tác chuyên môn tại Vinhomes Grand Park, Quận 9 có khung giờ mở cửa linh hoạt ngoài giờ học và cuối tuần, tạo điều kiện thuận lợi nhất cho học sinh - sinh viên.
                         </p>
                     </div>
@@ -823,11 +837,11 @@
                 <!-- Accordion 3 -->
                 <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300 reveal reveal-delay-300">
                     <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
-                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">3. Trình tự đăng ký nhận Thẻ Đồng Hành kỹ thuật số và tham gia hoạt động của chiến dịch diễn ra thế nào?</span>
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue" data-i18n="faq3_q">3. Trình tự đăng ký nhận Thẻ Đồng Hành kỹ thuật số và tham gia hoạt động của chiến dịch diễn ra thế nào?</span>
                         <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
                     </button>
                     <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
-                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100" data-i18n="faq3_a">
                             Sau khi hoàn tất đăng ký trực tuyến, Ban liên lạc chiến dịch sẽ kích hoạt Thẻ Đồng Hành kỹ thuật số và gửi Cẩm nang số "Smile First Checklist" đến bạn. Bạn có thể sử dụng thông tin ghi nhận để tham gia các buổi tư vấn sức khỏe học đường trực tiếp tại văn phòng đối tác Nha khoa Orion.
                         </p>
                     </div>
@@ -836,11 +850,11 @@
                 <!-- Accordion 4 -->
                 <div class="border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-300 reveal reveal-delay-400">
                     <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 bg-[#F8F9FA] hover:bg-slate-50 text-left transition duration-200">
-                        <span class="text-xs md:text-sm font-extrabold text-academy-blue">4. Đâu là sự khác biệt cơ bản về mặt công năng giữa các phương pháp chỉnh nha bằng khay trong suốt và mắc cài truyền thống?</span>
+                        <span class="text-xs md:text-sm font-extrabold text-academy-blue" data-i18n="faq4_q">4. Đâu là sự khác biệt cơ bản về mặt công năng giữa các phương pháp chỉnh nha bằng khay trong suốt và mắc cài truyền thống?</span>
                         <span class="faq-icon text-orion-orange text-lg font-bold transition-transform duration-200">+</span>
                     </button>
                     <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white">
-                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100">
+                        <p class="p-6 text-xs text-slate-500 leading-relaxed font-medium border-t border-slate-100" data-i18n="faq4_a">
                             Khay niềng trong suốt sở hữu lợi thế lớn về mặt thẩm mỹ học đường và khả năng dễ dàng tháo lắp linh hoạt khi ăn uống, làm sạch răng miệng. Trong khi đó, mắc cài truyền thống mang đến hiệu suất dịch chuyển cơ học tối ưu với lực siết liên tục, thích hợp cho cả những ca cấu trúc khớp cắn phức tạp nhất. Bác sĩ tại đối tác chuyên môn sẽ kiểm tra và đề xuất phác đồ thích hợp cho bạn.
                         </p>
                     </div>
@@ -872,26 +886,26 @@
                     </span>
                     <span class="font-extrabold text-white tracking-widest text-sm uppercase leading-none">SMILE FIRST, STEP FORWARD</span>
                 </div>
-                <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
-                    Sản phẩm dự thi Vòng 2 cuộc thi SMArt Gen's Branding Challenge 2026. Được phát triển bởi đội ngũ sáng tạo IGC BrandCrafters đến từ Trường TH - THCS - THPT IGC Tây Ninh.
+                <p class="text-xs text-slate-400 leading-relaxed max-w-sm" data-i18n="footer_desc">
+                    Sản phẩm dự thi Vòng 2 cuộc thi SMArt Gen's Branding Challenge 2026. Được phát triển bởi đội ngũ sáng tạo IGC BrandCrafters.
                 </p>
-                <p class="text-[10px] text-slate-500">
-                    &copy; 2026 IGC BrandCrafters. Bản quyền nội dung ý tưởng thuộc về nhóm dự thi.
+                <p class="text-[10px] text-slate-500" data-i18n="footer_copy">
+                    &copy; 2026 IGC BrandCrafters. Bản quyền nội dung ý tưởng thuộc về nhóm dự thi và Ban tổ chức.
                 </p>
             </div>
 
             <!-- Column 2 (30%): Ethics & Compliance Statement -->
             <div class="md:col-span-3 space-y-3">
-                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider">ĐẠO ĐỨC TRUYỀN THÔNG Y TẾ</h4>
-                <p class="text-[10px] text-slate-400 leading-relaxed">
+                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider" data-i18n="footer_ethics_title">ĐẠO ĐỨC TRUYỀN THÔNG Y TẾ</h4>
+                <p class="text-[10px] text-slate-400 leading-relaxed" data-i18n="footer_ethics_desc">
                     Nội dung trang web tuân thủ nghiêm ngặt chuẩn mực y tế của BTC: Không phóng đại hiệu quả chỉnh nha; Không sử dụng hình ảnh Before-After gây áp lực ngoại hình; Không body-shaming khuyết điểm răng miệng; Mọi chỉ định dịch vụ y tế đều khuyến nghị tham vấn phụ huynh và bác sĩ chuyên khoa tại cơ sở phòng khám.
                 </p>
             </div>
 
             <!-- Column 3 (20%): AI Disclosure -->
             <div class="md:col-span-3 space-y-3">
-                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider">KHAI BÁO CÔNG CỤ AI</h4>
-                <p class="text-[10px] text-slate-400 leading-relaxed">
+                <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider" data-i18n="footer_ai_title">KHAI BÁO CÔNG CỤ AI</h4>
+                <p class="text-[10px] text-slate-400 leading-relaxed" data-i18n="footer_ai_desc">
                     Dự án ứng dụng công cụ hỗ trợ AI (Gemini) trong giai đoạn gợi ý cấu trúc mã nguồn web và biên tập ngữ liệu ban đầu. Toàn bộ bố cục mỹ thuật, chiến lược định vị và phông nền thiết kế đều do nhóm IGC BrandCrafters chỉnh sửa và đưa ra quyết định cuối cùng.
                 </p>
             </div>
@@ -909,24 +923,24 @@
                 ✓
             </div>
             <div class="space-y-2">
-                <h3 class="text-xl font-extrabold text-[#0A192F]">Đăng Ký Đồng Hành Thành Công!</h3>
+                <h3 class="text-xl font-extrabold text-[#0A192F]" data-i18n="modal_success_title">Đăng Ký Đồng Hành Thành Công!</h3>
                 <div class="text-left bg-slate-50 p-4 rounded-2xl border border-slate-100/80 space-y-3">
-                    <p class="text-[11px] font-extrabold text-emerald-600 uppercase tracking-wider text-center">✨ Đã Kích Hoạt 2 Đặc Quyền ✨</p>
+                    <p class="text-[11px] font-extrabold text-emerald-600 uppercase tracking-wider text-center" data-i18n="modal_success_badge">✨ Đã Kích Hoạt 2 Đặc Quyền ✨</p>
                     <div class="flex items-start space-x-2 text-xs">
                         <span class="text-emerald-500 font-bold">✓</span>
-                        <span class="text-slate-600 leading-normal">
+                        <span class="text-slate-600 leading-normal" data-i18n="modal_success_item1">
                             <strong class="text-academy-blue font-bold">Cẩm nang & Passport số:</strong> Sẽ được Ban liên lạc chiến dịch gửi qua số điện thoại/email trong vòng 24 giờ tới.
                         </span>
                     </div>
                     <div class="flex items-start space-x-2 text-xs">
                         <span class="text-emerald-500 font-bold">✓</span>
-                        <span class="text-slate-600 leading-normal">
+                        <span class="text-slate-600 leading-normal" data-i18n="modal_success_item2">
                             <strong class="text-academy-blue font-bold">Lịch tư vấn Nha Khoa Orion:</strong> Bác sĩ chuyên khoa từ đối tác đồng hành sẽ chủ động liên hệ đặt lịch tư vấn trực tiếp 1-1 miễn phí tại phòng khám.
                         </span>
                     </div>
                 </div>
             </div>
-            <button onclick="closeSuccessModal()" class="w-full bg-[#FD7608] hover:bg-[#FD811C] text-white font-extrabold py-3.5 px-6 rounded-xl text-xs tracking-wider uppercase transition-all duration-200 shadow-md shadow-orange-500/10">
+            <button onclick="closeSuccessModal()" class="w-full bg-[#FD7608] hover:bg-[#FD811C] text-white font-extrabold py-3.5 px-6 rounded-xl text-xs tracking-wider uppercase transition-all duration-200 shadow-md shadow-orange-500/10" data-i18n="modal_success_btn">
                 Đóng
             </button>
         </div>
@@ -949,9 +963,10 @@
         const optTextB = document.getElementById('opt-text-b');
 
         let pageCurrentQ = 1;
+        let pageCurrentLanguage = 'vi';
 
-        // Bộ 3 câu hỏi chuyên sâu và thực tế nhất được nâng cấp
-        const pageQuestions = [
+        // Bộ 3 câu hỏi bằng tiếng Việt
+        const pageQuestionsVI = [
             {
                 num: "Câu hỏi 1/3",
                 category: "RÀO CẢN DIỆN MẠO GIAO TIẾP",
@@ -983,6 +998,361 @@
                 ]
             }
         ];
+
+        // Bộ 3 câu hỏi bằng tiếng Anh
+        const pageQuestionsEN = [
+            {
+                num: "Question 1/3",
+                category: "COMMUNICATION APPEARANCE BARRIER",
+                text: "\"In professional communication, does receiving orthodontic treatment (braces) hinder confidence or opportunities to build personal brands for young people?\"",
+                progress: "33%",
+                options: [
+                    { text: "A. Yes, traditional braces cause prolonged hesitation and inconvenience, significantly reducing public speaking performance.", correct: false },
+                    { text: "B. No, modern aesthetic orthodontic methods preserve a natural appearance; meanwhile, the proactive spirit of self-care is always highly valued.", correct: true }
+                ]
+            },
+            {
+                num: "Question 2/3",
+                category: "TIME MANAGEMENT BARRIER",
+                text: "\"With tight academic schedules and extracurricular activities, does orthodontic treatment cause major disruptions to students' timetables?\"",
+                progress: "66%",
+                options: [
+                    { text: "A. Yes, orthodontic care requires too much time for frequent weekly checkups, completely disrupting academic routines.", correct: false },
+                    { text: "B. No, applying modern digital treatment plans optimizes appointments (only needing checkout every 4-6 weeks), letting youth balance proactively.", correct: true }
+                ]
+            },
+            {
+                num: "Question 3/3",
+                category: "STRATEGIC FINANCIAL THINKING",
+                text: "\"Should caring for and improving smiles at student age be viewed as a 'luxury lookism expense' or a long-term 'personal branding investment'?\"",
+                progress: "100%",
+                options: [
+                    { text: "A. It is merely a transient lookism expense, which should be postponed indefinitely until one has surplus funds in the future.", correct: false },
+                    { text: "B. It is a strategic investment in health and self-confidence, creating a robust stepping stone for future career opportunities.", correct: true }
+                ]
+            }
+        ];
+
+        const pageQuestions = [];
+
+        // Dictionary chứa toàn bộ dịch thuật cho dự án
+        const translations = {
+            vi: {
+                sponsor_prefix: "Bảo trợ chuyên môn",
+                hero_badge: "Sáng kiến học đường",
+                hero_title: "Nụ Cười Tự Tin Là <br>\n                    <span class=\"text-orion-orange\">Hồ Sơ Năng Lực</span> Đầu Tiên",
+                hero_desc: "Điểm số và chứng chỉ là bệ phóng cho sự nghiệp trên giấy tờ. Nhưng một nụ cười rạng rỡ, khỏe mạnh mới chính là chiếc chìa khóa mở ra cánh cửa giao tiếp đầu tiên khi bạn trực tiếp bước vào môi trường chuyên nghiệp thực tế.",
+                hero_btn_quiz: "Giải Mã Bản Đồ Nụ Cười",
+                hero_btn_orion: "Tìm hiểu Nha Khoa Orion",
+                hero_img_note: "* Sứ mệnh đồng hành cùng học sinh, sinh viên tự tin bước vào tương lai rạng ngời.",
+                hero_image_caption: "Minh họa: Nụ cười tự tin định hình phong thái nhà lãnh đạo trẻ tương lai.",
+                hero_right_badge: "ĐIỂM NHẤN CHIẾN DỊCH",
+                hero_right_big_idea: "Ý TƯỞNG CỐT LÕI",
+                hero_right_tagline_label: "THÔNG ĐIỆP CHIẾN DỊCH",
+                hero_right_tagline: "\"Nụ cười của bạn là Hồ sơ năng lực đầu tiên.\"",
+                strat_tag: "Giải pháp cho \"Academic FOMO\"",
+                strat_title: "Phá bỏ vòng lặp trì hoãn, <br>Chủ động định hình tương lai chuyên nghiệp",
+                strat_desc: "Học sinh - sinh viên thường ưu tiên đầu tư cho các giá trị học thuật ngắn hạn (bằng cấp, chứng chỉ) mà vô tình xem nhẹ sức khỏe diện mạo. Chỉnh nha bị lầm tưởng là một rào cản y tế gây tốn kém thời gian và chi phí, dẫn đến sự trì hoãn kéo dài. Chiến dịch của chúng tôi khuyến khích các bạn trẻ thay đổi tư duy: xem nụ cười khỏe đẹp như một phần tất yếu của thương hiệu cá nhân dài hạn.",
+                partner_tag: "Vai trò đối tác chuyên môn",
+                partner_title: "Nha Khoa Orion – Điểm Đỡ Khoa Học",
+                partner_desc: "Để những thông điệp học đường không dừng lại ở mức cảm tính, <strong>Nha Khoa Orion</strong> (đại đô thị Vinhomes Grand Park, Quận 9) đồng hành cùng chiến dịch với tư cách nhà bảo trợ chuyên môn y khoa. Orion cung cấp các giải pháp chỉnh nha chuyên nghiệp, phác đồ cá nhân hóa 3D hiện đại và hỗ trợ tài chính học đường linh hoạt, biến quá trình niềng răng thành một hành trình trải nghiệm an tâm, nhẹ nhàng và đúng chuẩn y khoa.",
+                partner_bullet1: "✓ Tri thức y học đạt chuẩn",
+                partner_bullet2: "✓ Công nghệ CT Cone Beam 3D",
+                partner_link: "Ghé thăm website Orion →",
+                pass_desc: "✓ Chứng nhận hoàn thành hành trình giải mã định kiến, tháo gỡ rào cản trì hoãn diện mạo học đường.<br>\n                                    ✓ Nhận cẩm nang số \"Smile First Checklist\" - Bộ hướng dẫn xây dựng thương hiệu cá nhân từ nụ cười tự tin.<br>\n                                    ✓ Đồng hành cùng thông điệp tích cực, chủ động đầu tư cho bản thân chuẩn y khoa học đường.",
+                align_badge: "Chiến Lược Định Vị",
+                align_title: "Sự Đồng Nhất Chiến Lược Của Chiến Dịch",
+                align_sub: "Ý tưởng cốt lõi của chiến dịch được xây dựng dựa trên sự liên kết chặt chẽ giữa 3 trụ cột giá trị cốt lõi dưới đây.",
+                align1_badge: "TRỤ CỘT 1 - HÌNH THỂ",
+                align1_title: "Sức Khỏe Cấu Trúc Răng Miệng",
+                align1_desc: "Mỗi nụ cười khỏe đẹp phải bắt đầu từ nền tảng khớp cắn chuẩn xác chuẩn y học học đường.",
+                align1_bullet: "Được đảm bảo bởi đối tác Nha Khoa Orion",
+                align2_badge: "TRỤ CỘT 2 - BIỂU TRƯNG",
+                align2_title: "Thương Hiệu Cá Nhân Nổi Bật",
+                align2_desc: "Một nụ cười khỏe mạnh, chỉn chu là vũ khí sắc bén giúp định hình phong thái tự tin vượt bậc.",
+                align2_bullet: "Nụ cười là 'Hồ sơ năng lực' đầu tiên",
+                align3_badge: "TRỤ CỘT 3 - TRUYỀN THÔNG",
+                align3_title: "Bứt Phá Định Kiến & Trì Hoãn",
+                align3_desc: "Cổ vũ học sinh, sinh viên hành động sớm để chăm sóc bản thân, không trì hoãn cơ hội tương lai.",
+                align3_bullet: "Chiến dịch 'Smile First, Step Forward'",
+                align_link: "Đọc toàn bộ Big Idea và Tagline chiến dịch",
+                benefits_badge: "Bứt Phá Bản Thân",
+                benefits_title: "Lợi Ích Chỉnh Nha Từ Góc Nhìn Chiến Dịch",
+                benefits_sub: "Không chỉ dừng lại ở việc thay đổi diện mạo y khoa thông thường, hành trình đồng hành cùng chiến dịch mang đến những giá trị bền vững để định hình tương lai.",
+                benefit1_title: "Kiến Tạo Thương Hiệu",
+                benefit1_desc: "Nụ cười khỏe đẹp chính là \"Hồ Sơ Năng Lực\" sống động nhất. Giúp bạn tự tin gây ấn tượng mạnh mẽ ban đầu trước nhà tuyển dụng, ban giám khảo hay đối tác trong giao tiếp chuyên nghiệp.",
+                benefit1_footer: "Thương hiệu cá nhân",
+                benefit2_title: "Bảo Vệ Sức Khỏe",
+                benefit2_desc: "Căn chỉnh khớp cắn đạt chuẩn giúp bảo vệ khớp thái dương hàm, cải thiện khả năng phát âm rõ ràng khi thuyết trình học đường và duy trì sức khỏe răng miệng tối ưu lâu dài.",
+                benefit2_footer: "Y khoa chuẩn mực",
+                benefit3_title: "Tháo Gỡ Trì Hoãn",
+                benefit3_desc: "Xóa bỏ hoàn toàn tâm lý trì hoãn \"chờ đến lúc đi làm mới niềng răng\". Việc chủ động đầu tư sớm cho diện mạo giúp các bạn trẻ mở rộng các cơ hội bứt phá thành công hơn.",
+                benefit3_footer: "Chủ động nâng cấp",
+                benefit4_title: "Trải Nghiệm An Tâm",
+                benefit4_desc: "Được định hướng thông tin khách quan, tiếp cận kiến thức chỉnh nha khoa học từ đối tác chuyên môn uy tín cùng nhiều giải pháp tối ưu chi phí học sinh - sinh viên.",
+                benefit4_footer: "Đồng hành tin cậy",
+                gallery_badge: "Sức Mạnh Truyền Cảm Hứng",
+                gallery_title: "Góc Truyền Cảm Hứng:<br>Nụ Cười Tự Tin, Tương Lai Bứt Phá",
+                gallery_sub: "Chỉnh nha không chỉ chỉnh lại những khớp răng chưa đều, mà là quá trình khai phá sự tự tin vốn có. Cùng ngắm nhìn nguồn năng lượng tích cực từ những nụ cười tỏa sáng – động lực mạnh mẽ giúp các bạn học sinh, sinh viên chủ động làm chủ thương hiệu cá nhân của riêng mình.",
+                gallery_partner: "Đồng hành bởi Nha Khoa Orion",
+                g_card1_badge: "🎓 Nụ Cười Thuyết Trình",
+                g_card1_title: "Tự tin thuyết trình & Giao tiếp trước đám đông",
+                g_card1_desc: "Chỉnh nha hiện đại giúp giải phóng rào cản tâm lý e ngại, hỗ trợ học sinh và sinh viên rèn luyện phong thái đĩnh đạc khi trình bày các dự án học thuật, tự tin biểu đạt ý tưởng cá nhân một cách mạch lạc, cuốn hút trước tập thể.",
+                g_card1_footer: "Sức mạnh từ sự chủ động",
+                g_card2_badge: "⚡ Hồ Sơ Ấn Tượng",
+                g_card2_title: "Kiến tạo thương hiệu cá nhân bền vững",
+                g_card2_desc: "Đầu tư chăm sóc sức khỏe nụ cười từ sớm là bước chuẩn bị chiến lược lâu dài, giúp các bạn trẻ xây dựng diện mạo chỉn chu và ghi điểm ấn tượng, tự tin trong các buổi phỏng vấn tuyển dụng hay gặp gỡ đối tác tương lai.",
+                g_card2_footer: "Đầu tư thông thái dài hạn",
+                g_card3_badge: "🩺 Công Nghệ Số 3D",
+                g_card3_title: "Phác đồ kỹ thuật số cá nhân hóa",
+                g_card3_desc: "Đối tác chuyên môn Nha Khoa Orion ứng dụng các công nghệ y khoa hiện đại chuẩn mực như quét cấu trúc răng 3D, mô phỏng trước kết quả điều trị giúp bạn hoàn toàn an tâm và chủ động theo dõi sát sao từng mốc biến đổi của mình.",
+                g_card4_badge: "🤝 Tự Tin Kết Nối",
+                g_card4_title: "Xây dựng kết nối & Hòa nhập cộng đồng",
+                g_card4_desc: "Sự tự tin trong giao tiếp giúp rút ngắn khoảng cách thế hệ và bạn bè, khuyến khích tinh thần chủ động tham gia các phong trào trường lớp, câu lạc bộ và các dự án xã hội ý nghĩa mà không gặp bất kỳ rào cản tâm lý nào.",
+                gallery_note: "💡 <strong>Lưu ý từ chiến dịch:</strong> Để tôn trọng sự đa dạng diện mạo và bảo đảm sức khỏe y học học đường, chúng tôi hoàn toàn không sử dụng hình ảnh \"Trước - Sau\" gây áp lực tâm lý ngoại hình. Mỗi người sở hữu một vẻ đẹp riêng, chỉnh nha chính là cách giúp bạn chăm sóc sức khỏe cấu trúc răng miệng chuẩn khoa học và tối ưu nụ cười tự tin vốn có.",
+                quiz_badge: "Ứng dụng thực tế ảo",
+                quiz_title: "Trạm Khảo Sát \"Bản Đồ Nụ Cười\"",
+                quiz_sub: "Vượt qua các lầm tưởng răng miệng để nhận diện đúng giá trị đầu tư cho tương lai sự nghiệp.",
+                quiz_welcome_title: "Giải Mật Định Kiến Chỉnh Nha",
+                quiz_welcome_desc: "Chỉ với 3 câu hỏi trắc nghiệm nhanh, bạn sẽ tháo gỡ hoàn toàn các rào cản tâm lý răng miệng và mở khóa tấm thẻ kỹ thuật số \"Smile Ambassador Passport\" được chứng thực đồng hành cùng chiến dịch.",
+                quiz_start_btn: "BẮT ĐẦU KHẢO SÁT",
+                quiz_result_title: "TƯ DUY CHIẾN LƯỢC ĐÃ ĐƯỢC KHAI PHÁ!",
+                quiz_result_desc: "Bạn đã xuất sắc tháo gỡ hoàn toàn các lầm tưởng và mở khóa thành công tấm thẻ đồng hành kỹ thuật số đặc quyền.",
+                pass_partner_tag: "CHIẾN DỊCH HỌC ĐƯỜNG",
+                pass_partner_name: "SMILE FIRST, STEP FORWARD",
+                pass_holder_label: "CHỦ SỞ HỮU HỘ CHIẾU / HOLDER",
+                pass_cert_label: "CHỨNG NHẬN CHIẾN DỊCH / CERTIFICATE",
+                pass_scope_label: "PHẠM VI ÁP DỤNG / SCOPE:",
+                pass_scope_val: "Trực tuyến & Sự kiện học đường",
+                quiz_result_btn_activate: "Kích hoạt thẻ đồng hành ngay",
+                quiz_result_btn_retry: "Thực hiện lại khảo sát",
+                form_left_badge: "Đăng ký đồng hành",
+                form_left_title: "Mở Khóa <br>Nụ Cười Sáng",
+                form_left_header: "1 ĐĂNG KÝ - 2 ĐẶC QUYỀN:",
+                form_left_item1: "Nhận ngay Cẩm nang số <strong class=\"text-white\">\"Smile First Checklist\"</strong> để xây dựng thương hiệu cá nhân qua nụ cười.",
+                form_left_item2: "Đồng thời đặt lịch tư vấn & thiết kế nụ cười <strong class=\"text-white\">1-1 miễn phí</strong> cùng bác sĩ chuyên khoa tại đối tác <strong class=\"text-white\">Nha Khoa Orion</strong>.",
+                form_left_footer: "* Cam kết bảo mật dữ liệu học tập, đóng góp ý kiến nâng cao nhận thức răng miệng học đường cùng đối tác chuyên môn <a href=\"https://nhakhoaorion.vn/\" target=\"_blank\" rel=\"noopener\" class=\"text-orion-orange hover:underline font-bold\">Nha Khoa Orion</a>.",
+                form_right_title: "Đăng Ký Đồng Hành & Tư Vấn Chuẩn Y Khoa",
+                form_right_badge: "Hơn 500+ học sinh, sinh viên đã tham gia",
+                form_label_name: "Họ và Tên Học sinh / Sinh viên",
+                form_label_phone: "Số Điện Thoại Liên Hệ",
+                form_label_email: "Địa chỉ Email",
+                form_label_method: "Hình thức nhận tư vấn với Orion",
+                form_placeholder_name: "Nguyễn Văn A",
+                form_placeholder_phone: "0901234567",
+                form_placeholder_email: "nguyenvana@gmail.com",
+                form_opt_direct: "Tư vấn trực tiếp 1-1 & Quét cấu trúc răng (Vinhomes Grand Park, Q.9)",
+                form_opt_online: "Tư vấn trực tuyến từ xa (Qua cuộc gọi điện thoại / Zalo)",
+                form_check_newsletter: "Đồng ý nhận cẩm nang <strong class=\"text-orion-darkBrown font-bold\">\"Smile First Checklist\"</strong> hướng dẫn xây dựng thương hiệu cá nhân qua email/SĐT.",
+                form_check_appointment: "Đồng ý đặt lịch hẹn tư vấn và lập phác đồ răng miệng 1-1 miễn phí với đối tác chuyên môn <strong class=\"text-orion-orange font-bold\">Nha Khoa Orion</strong>.",
+                form_submit_btn: "KÍCH HOẠT ĐĂNG KÝ ĐỒNG HÀNH",
+                faq_badge: "Hỏi Đáp Định Hướng",
+                faq_title: "Giải Đáp Thắc Mắc Thường Gặp",
+                faq_sub: "Mọi thông tin cần biết để bắt đầu hành trình nâng cấp bản thân an tâm, đúng hướng và chuẩn khoa học.",
+                faq1_q: "1. Làm thế nào để học sinh - sinh viên tự nhận biết tình trạng răng miệng hiện tại có cần can thiệp chỉnh nha hay không?",
+                faq1_a: "Bạn có thể tự quan sát các dấu hiệu như khớp cắn chưa chuẩn xác, răng mọc khấp khểnh, thưa, hô hoặc móm nhẹ khi cười trước gương. Tuy nhiên, để nhận diện chính xác và xây dựng phương án khắc phục an toàn, các bạn trẻ nên nhận tham vấn trực tiếp từ bác sĩ chuyên khoa tại cơ sở của đối tác chuyên môn Nha Khoa Orion bằng công nghệ quét cấu trúc xương hàm hiện đại.",
+                faq2_q: "2. Liệu việc chỉnh nha tại cơ sở phòng khám của đối tác có gây ảnh hưởng đến lịch học tập của học sinh - sinh viên?",
+                faq2_a: "Hoàn toàn không. Nhờ các phác đồ kỹ thuật số cá nhân hóa, tần suất thăm khám trực tiếp hiện nay đã được tối ưu hóa đáng kể (chỉ từ 4 đến 6 tuần một lần). Đồng thời, cơ sở của đối tác chuyên môn tại Vinhomes Grand Park, Quận 9 có khu giờ mở cửa linh hoạt ngoài giờ học và cuối tuần, tạo điều kiện thuận lợi nhất cho học sinh - sinh viên.",
+                faq3_q: "3. Trình tự đăng ký nhận Thẻ Đồng Hành kỹ thuật số và tham gia hoạt động của chiến dịch diễn ra thế nào?",
+                faq3_a: "Sau khi hoàn tất đăng ký trực tuyến, Ban liên lạc chiến dịch sẽ kích hoạt Thẻ Đồng Hành kỹ thuật số và gửi Cẩm nang số \"Smile First Checklist\" đến bạn. Bạn có thể sử dụng thông tin ghi nhận để tham gia các buổi tư vấn sức khỏe học đường trực tiếp tại văn phòng đối tác Nha khoa Orion.",
+                faq4_q: "4. Đâu là sự khác biệt cơ bản về mặt công năng giữa các phương pháp chỉnh nha bằng khay trong suốt và mắc cài truyền thống?",
+                faq4_a: "Khay niềng trong suốt sở hữu lợi thế lớn về mặt thẩm mỹ học đường và khả năng dễ dàng tháo lắp linh hoạt khi ăn uống, làm sạch răng miệng. Trong khi đó, mắc cài truyền thống mang đến hiệu suất dịch chuyển cơ học tối ưu với lực siết liên tục, thích hợp cho cả những ca cấu trúc khớp cắn phức tạp nhất. Bác sĩ tại đối tác chuyên môn sẽ kiểm tra và đề xuất phác đồ thích hợp cho bạn.",
+                footer_desc: "Sản phẩm dự thi Vòng 2 cuộc thi SMArt Gen's Branding Challenge 2026. Được phát triển bởi đội ngũ sáng tạo IGC BrandCrafters.",
+                footer_copy: "&copy; 2026 IGC BrandCrafters. Bản quyền nội dung ý tưởng thuộc về nhóm dự thi và Ban tổ chức.",
+                footer_ethics_title: "ĐẠO ĐỨC TRUYỀN THÔNG Y TẾ",
+                footer_ethics_desc: "Nội dung trang web tuân thủ nghiêm ngặt chuẩn mực y tế của BTC: Không phóng đại hiệu quả chỉnh nha; Không sử dụng hình ảnh Before-After gây áp lực ngoại hình; Không body-shaming khuyết điểm răng miệng; Mọi chỉ định dịch vụ y tế đều khuyến nghị tham vấn phụ huynh và bác sĩ chuyên khoa tại cơ sở phòng khám.",
+                footer_ai_title: "KHAI BÁO CÔNG CỤ AI",
+                footer_ai_desc: "Dự án ứng dụng công cụ hỗ trợ AI (Gemini) trong giai đoạn gợi ý cấu trúc mã nguồn web và biên tập ngữ liệu ban đầu. Toàn bộ bố cục mỹ thuật, chiến lược định vị và phông nền thiết kế đều do nhóm IGC BrandCrafters chỉnh sửa và đưa ra quyết định cuối cùng.",
+                modal_success_title: "Đăng Ký Đồng Hành Thành Công!",
+                modal_success_badge: "✨ Đã Kích Hoạt 2 Đặc Quyền ✨",
+                modal_success_item1: "<strong class=\"text-academy-blue font-bold\">Cẩm nang & Passport số:</strong> Sẽ được Ban liên lạc chiến dịch gửi qua số điện thoại/email trong vòng 24 giờ tới.",
+                modal_success_item2: "<strong class=\"text-academy-blue font-bold\">Lịch tư vấn Nha Khoa Orion:</strong> Bác sĩ chuyên khoa từ đối tác đồng hành sẽ chủ động liên hệ đặt lịch tư vấn trực tiếp 1-1 miễn phí tại phòng khám.",
+                modal_success_btn: "Đóng"
+            },
+            en: {
+                sponsor_prefix: "Professional Sponsor",
+                hero_badge: "School Initiative",
+                hero_title: "A Confident Smile Is <br>\n                    Your First <span class=\"text-orion-orange\">Portfolio</span>",
+                hero_desc: "Grades and certificates are the launchpad for your career on paper. But a bright, healthy smile is the key that unlocks the first door of communication when you step into real professional environments.",
+                hero_btn_quiz: "Unlock Your Smile Map",
+                hero_btn_orion: "Learn About Orion Dental",
+                hero_img_note: "* The mission to accompany students stepping confidently into a radiant future.",
+                hero_image_caption: "Illustration: A confident smile shapes the presence of future young leaders.",
+                hero_right_badge: "CAMPAIGN HIGHLIGHT",
+                hero_right_big_idea: "BIG IDEA",
+                hero_right_tagline_label: "CAMPAIGN TAGLINE",
+                hero_right_tagline: "\"Your Smile is Your First Portfolio.\"",
+                strat_tag: "Solution for \"Academic FOMO\"",
+                strat_title: "Breaking the Procrastination Loop, <br>Proactively Shaping a Professional Future",
+                strat_desc: "Students often prioritize short-term academic achievements (degrees, certificates) while unintentionally overlooking their appearance and dental health. Orthodontics is mistakenly perceived as a costly and time-consuming medical obstacle, leading to prolonged delay. Our campaign encourages youth to shift their mindset: viewing a healthy, radiant smile as an essential part of their long-term personal brand.",
+                partner_tag: "Clinical Partner Role",
+                partner_title: "Orion Dental – The Scientific Foundation",
+                partner_desc: "To ground campus messaging in medical science, <strong>Orion Dental</strong> (Vinhomes Grand Park urban area, District 9) serves as our clinical sponsor. Orion delivers professional orthodontic solutions, advanced personalized 3D treatment plans, and flexible student financial assistance, converting the dental alignment process into a comfortable, safe, and medically standard experience.",
+                partner_bullet1: "✓ Standard Medical Knowledge",
+                partner_bullet2: "✓ CT Cone Beam 3D Technology",
+                partner_link: "Visit Orion Website →",
+                pass_desc: "✓ Certifies completing the journey of dissolving misconceptions and overcoming procrastination of school appearance.<br>\n                                    ✓ Receives the \"Smile First Checklist\" digital handbook - A guide to building a personal brand from a confident smile.<br>\n                                    ✓ Accompanies positive messaging and proactively invests in self-care matching school clinical standards.",
+                align_badge: "Positioning Strategy",
+                align_title: "Campaign Strategic Alignment",
+                align_sub: "The core campaign idea is built on the tight integration between the 3 core value pillars below.",
+                align1_badge: "PILLAR 1 - PHYSICAL",
+                align1_title: "Orthodontic Structural Health",
+                align1_desc: "Every beautiful, healthy smile must start from the foundation of a correct medical occlusion standard.",
+                align1_bullet: "Guaranteed by Orion Dental Clinic",
+                align2_badge: "PILLAR 2 - SYMBOLIC",
+                align2_title: "Outstanding Personal Brand",
+                align2_desc: "A healthy, neat smile is a sharp weapon that shapes outstanding self-confidence.",
+                align2_bullet: "Smile is your first 'Portfolio'",
+                align3_badge: "PILLAR 3 - COMMUNICATION",
+                align3_title: "Break Stereotypes & Procrastination",
+                align3_desc: "Encourages students to take early action to care for themselves, not delaying future opportunities.",
+                align3_bullet: "'Smile First, Step Forward' Campaign",
+                align_link: "Read Full Campaign Big Idea and Tagline",
+                benefits_badge: "Breakthrough Yourself",
+                benefits_title: "Orthodontic Benefits from Campaign Perspective",
+                benefits_sub: "Beyond basic medical appearance changes, participating in the campaign brings sustainable value to shape your future.",
+                benefit1_title: "Build Personal Brand",
+                benefit1_desc: "A healthy and beautiful smile is the most vivid 'Portfolio'. Helps you confidently make a powerful first impression on recruiters, judges, or partners in professional communication.",
+                benefit1_footer: "Personal Branding",
+                benefit2_title: "Protect Dental Health",
+                benefit2_desc: "Correct bite alignment helps protect temporomandibular joints, improves clear pronunciation in school presentations, and maintains long-term optimal oral health.",
+                benefit2_footer: "Medical Standard",
+                benefit3_title: "Eliminate Delay",
+                benefit3_desc: "Completely remove the procrastination mindset of 'waiting until work to get braces'. Proactive early investment in appearance opens more opportunities for youth to achieve breakthrough success.",
+                benefit3_footer: "Proactive Upgrade",
+                benefit4_title: "Peace of Mind",
+                benefit4_desc: "Get objective information guidance, access scientific orthodontic knowledge from a reputable specialized partner, along with multiple student-cost-optimized solutions.",
+                benefit4_footer: "Trusted Companion",
+                gallery_badge: "Power of Inspiration",
+                gallery_title: "Inspirational Corner:<br>Confident Smile, Future Breakthrough",
+                gallery_sub: "Orthodontics is not just about correcting misaligned teeth; it is a process of unleashing your inherent self-confidence. Witness the positive energy from bright smiles – a powerful motivator for students to proactively own their personal brand.",
+                gallery_partner: "Partnered with Orion Dental",
+                g_card1_badge: "🎓 Presentation Smile",
+                g_card1_title: "Confident Presentation & Public Speaking",
+                g_card1_desc: "Modern orthodontics helps release hesitant psychological barriers, supporting students to build a composed presence in academic presentations and confidently express personal ideas clearly and appealingly.",
+                g_card1_footer: "Power of proactivity",
+                g_card2_badge: "⚡ Impressive Profile",
+                g_card2_title: "Build a Sustainable Personal Brand",
+                g_card2_desc: "Investing in early smile care is a long-term strategic step, helping young people build a neat appearance, make impressive marks, and excel in future job interviews or partner meetings.",
+                g_card2_footer: "Wise long-term investment",
+                g_card3_badge: "🩺 3D Digital Tech",
+                g_card3_title: "Personalized Digital Treatment Plan",
+                g_card3_desc: "Our professional partner, Orion Dental, utilizes advanced medical technology such as 3D teeth structure scanning and simulated outcome projection, letting you rest assured and track every milestone of your change.",
+                g_card4_badge: "🤝 Confident Connection",
+                g_card4_title: "Build Connections & Social Integration",
+                g_card4_desc: "Communication confidence shortens distances with friends and generations, encouraging a proactive spirit to join school activities, clubs, and meaningful social projects without any psychological barriers.",
+                gallery_note: "💡 <strong>Campaign Note:</strong> To respect diverse appearances and ensure school health, we strictly do not use 'Before - After' images that create lookism pressure. Everyone possesses their unique beauty, and orthodontics is simply a way to care for structural oral health and optimize your natural, confident smile.",
+                quiz_badge: "Virtual Reality App",
+                quiz_title: "Smile Map Survey Station",
+                quiz_sub: "Overcome dental myths to recognize the true investment value for your future career.",
+                quiz_welcome_title: "De-mystifying Orthodontic Misconceptions",
+                quiz_welcome_desc: "With just 3 quick multiple-choice questions, you will dissolve dental mental barriers and unlock your digital 'Smile Ambassador Passport' certified by the campaign.",
+                quiz_start_btn: "START SURVEY",
+                quiz_result_title: "STRATEGIC MINDSET UNLEASHED!",
+                quiz_result_desc: "You have successfully cleared all misconceptions and unlocked your exclusive digital companion card.",
+                pass_partner_tag: "SCHOOL CAMPAIGN",
+                pass_partner_name: "SMILE FIRST, STEP FORWARD",
+                pass_holder_label: "PASSPORT HOLDER",
+                pass_cert_label: "CAMPAIGN CERTIFICATE",
+                pass_scope_label: "APPLICABLE SCOPE:",
+                pass_scope_val: "Online & School Campus Events",
+                quiz_result_btn_activate: "Activate Companion Card Now",
+                quiz_result_btn_retry: "Retake Survey",
+                form_left_badge: "Join Campaign",
+                form_left_title: "Unlock <br>Your Bright Smile",
+                form_left_header: "1 REGISTRATION - 2 EXCLUSIVE PRIVILEGES:",
+                form_left_item1: "Instantly receive the digital handbook <strong class=\"text-white\">'Smile First Checklist'</strong> to build your personal brand via your smile.",
+                form_left_item2: "Simultaneously book a <strong class=\"text-white\">free 1-1 smile consultation & scan</strong> with a specialist doctor at our partner <strong class=\"text-white\">Orion Dental Clinic</strong>.",
+                form_left_footer: "* Committed to securing academic data, contributing feedback to elevate school oral health awareness with clinical partner <a href=\"https://nhakhoaorion.vn/\" target=\"_blank\" rel=\"noopener\" class=\"text-orion-orange hover:underline font-bold\">Orion Dental Clinic</a>.",
+                form_right_title: "Register for Campaign & Medical Consultation",
+                form_right_badge: "Over 500+ students joined",
+                form_label_name: "Full Name of Student",
+                form_label_phone: "Contact Phone Number",
+                form_label_email: "Email Address",
+                form_label_method: "Orion Consultation Mode",
+                form_placeholder_name: "John Doe",
+                form_placeholder_phone: "0901234567",
+                form_placeholder_email: "johndoe@example.com",
+                form_opt_direct: "Direct 1-1 consulting & teeth structural scan (Vinhomes Grand Park, Dist 9)",
+                form_opt_online: "Remote online consulting (via Phone Call / Zalo)",
+                form_check_newsletter: "Agree to receive the handbook <strong class=\"text-orion-darkBrown font-bold\">'Smile First Checklist'</strong> on personal branding via email/phone.",
+                form_check_appointment: "Agree to schedule a free 1-1 dental consultation and treatment plan with our clinical partner <strong class=\"text-orion-orange font-bold\">Orion Dental Clinic</strong>.",
+                form_submit_btn: "ACTIVATE CAMPAIGN REGISTRATION",
+                faq_badge: "Orientation Q&A",
+                faq_title: "Frequently Asked Questions",
+                faq_sub: "All information you need to know to start upgrading yourself with peace of mind, correct guidance, and medical standard.",
+                faq1_q: "1. How do students self-check if their current dental situation requires orthodontic intervention?",
+                faq1_a: "You can self-observe signs such as incorrect bite alignment, crowded, spaced, protruding, or slightly receded teeth when smiling in front of a mirror. However, for precise identification and to establish a safe treatment plan, youth should seek a direct consultation with a specialized doctor at our clinical partner Orion Dental Clinic using modern jawbone structure scanning technology.",
+                faq2_q: "2. Will receiving orthodontics at our partner's clinic interfere with student academic schedules?",
+                faq2_a: "Absolutely not. Thanks to personalized digital plans, the frequency of in-person clinical visits is significantly optimized (only once every 4 to 6 weeks). Additionally, our clinical partner's facility in Vinhomes Grand Park, District 9 offers flexible hours after school and on weekends, ensuring maximum convenience for students.",
+                faq3_q: "3. What is the process for registering for the digital Companion Card and participating in campaign activities?",
+                faq3_a: "After completing online registration, the campaign liaison team will activate your digital Companion Card and send the digital handbook 'Smile First Checklist' to you. You can use your registered details to attend direct campus health consultation sessions at our clinical partner Orion Dental Clinic's office.",
+                faq4_q: "4. What is the fundamental functional difference between transparent aligners and traditional braces?",
+                faq4_a: "Clear aligners offer great aesthetic advantages in school environments and the flexibility of easy removal for eating and oral cleaning. Meanwhile, traditional braces deliver optimal mechanical movement performance with continuous force, suitable for even the most complex occlusion structures. Specialized doctors at our clinical partner will inspect and recommend the suitable plan for you.",
+                footer_desc: "Entry for Round 2 of the SMArt Gen's Branding Challenge 2026. Developed by creative team IGC BrandCrafters.",
+                footer_copy: "&copy; 2026 IGC BrandCrafters. Content idea copyright belongs to the competition team and the Organizing Committee.",
+                footer_ethics_title: "MEDICAL COMMUNICATION ETHICS",
+                footer_ethics_desc: "Website content strictly complies with clinical communication ethics: No exaggeration of orthodontic results; No 'Before-After' imagery lookism pressure; No body-shaming of dental conditions; All clinical guidance advises consulting parents and specialist clinic doctors.",
+                footer_ai_title: "AI TOOL DISCLOSURE",
+                footer_ai_desc: "This project utilized AI assistance tools (Gemini) during draft code structural outline and initial copy editing stages. All final layout aesthetics, positioning strategies, and background designs were refined and finalized by IGC BrandCrafters.",
+                modal_success_title: "Campaign Registration Successful!",
+                modal_success_badge: "✨ 2 Privileges Activated ✨",
+                modal_success_item1: "<strong class=\"text-academy-blue font-bold\">Handbook & Digital Passport:</strong> Will be sent to your phone/email by the campaign liaison team within 24 hours.",
+                modal_success_item2: "<strong class=\"text-academy-blue font-bold\">Orion Dental Consultation:</strong> Specialist doctors from our companion partner will proactively reach out to schedule a free direct 1-1 consulting session.",
+                modal_success_btn: "Close"
+            }
+        };
+
+        // Hàm chuyển đổi ngôn ngữ
+        function setLanguage(lang) {
+            pageCurrentLanguage = lang;
+
+            // Cập nhật bộ câu hỏi khảo sát
+            pageQuestions.length = 0;
+            const srcQuestions = lang === 'vi' ? pageQuestionsVI : pageQuestionsEN;
+            srcQuestions.forEach(q => pageQuestions.push(JSON.parse(JSON.stringify(q))));
+
+            // Reload câu hỏi nếu đang trong quá trình làm khảo sát
+            if (!pageActive.classList.contains('hidden')) {
+                loadPageQuestion();
+            }
+
+            // Cập nhật text content các phần tử tĩnh
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Cập nhật placeholders
+            const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+            placeholders.forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang] && translations[lang][key]) {
+                    el.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+
+            // Cập nhật nút lựa chọn ngôn ngữ hoạt động
+            const btnVi = document.getElementById('lang-btn-vi');
+            const btnEn = document.getElementById('lang-btn-en');
+            if (lang === 'vi') {
+                btnVi.className = "px-2.5 py-1.5 rounded-lg text-[10px] font-extrabold tracking-wider transition-all duration-200 flex items-center space-x-1 bg-white text-orion-orange shadow-sm";
+                btnEn.className = "px-2.5 py-1.5 rounded-lg text-[10px] font-extrabold tracking-wider transition-all duration-200 flex items-center space-x-1 text-slate-400 hover:text-slate-600";
+            } else {
+                btnEn.className = "px-2.5 py-1.5 rounded-lg text-[10px] font-extrabold tracking-wider transition-all duration-200 flex items-center space-x-1 bg-white text-orion-orange shadow-sm";
+                btnVi.className = "px-2.5 py-1.5 rounded-lg text-[10px] font-extrabold tracking-wider transition-all duration-200 flex items-center space-x-1 text-slate-400 hover:text-slate-600";
+            }
+
+            // Cập nhật Passport name
+            const inputName = document.getElementById('student-name-input').value;
+            syncPassportName(inputName);
+        }
+
+        // Khởi tạo mặc định là Tiếng Việt
+        setLanguage('vi');
 
         function startPageQuiz() {
             pageCurrentQ = 1;
@@ -1119,7 +1489,8 @@
         function syncPassportName(value) {
             const passportNameEl = document.getElementById('passport-holder-name');
             if (passportNameEl) {
-                passportNameEl.innerText = value.trim() !== "" ? value.toUpperCase() : "HỘI VIÊN DANH DỰ";
+                const defaultName = pageCurrentLanguage === 'vi' ? 'HỘI VIÊN DANH DỰ' : 'HONORARY MEMBER';
+                passportNameEl.innerText = value.trim() !== "" ? value.toUpperCase() : defaultName;
             }
         }
 
