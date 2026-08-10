@@ -1,8 +1,0 @@
-{
-  "name": "Smile First, Step Forward",
-  "description": "Sáng kiến truyền thông học đường giải mật định kiến chỉnh nha cùng Nha Khoa Orion, tích hợp trợ lý Bé Mầm AI & Firebase Firestore",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
