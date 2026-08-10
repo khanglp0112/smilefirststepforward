@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /registrations/{registrationId} {
+      allow create: if request.resource.data.fullName is string 
+                    && request.resource.data.phone is string
+                    && request.resource.data.email is string;
+      allow read: if true;
+    }
+  }
+}

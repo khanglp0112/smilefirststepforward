@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "registrations": {
+      "title": "Campaign Registrations",
+      "description": "Student campaign registration for Smile Ambassador Passport and Handbook",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "description": "Full name of applicant"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Contact phone number"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        },
+        "school": {
+          "type": "string",
+          "description": "School or workplace name"
+        },
+        "region": {
+          "type": "string",
+          "description": "City or region"
+        },
+        "serviceInterest": {
+          "type": "string",
+          "description": "Service or concern of interest"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of registration"
+        }
+      },
+      "required": ["fullName", "phone", "email"]
+    }
+  }
+}
