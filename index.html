@@ -8,26 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Firebase JS SDK Integration -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyCc5ofWrbLN8n5g2J5mm0eK5dVSCqTR-aA",
-            authDomain: "lucky-terminus-rxctm.firebaseapp.com",
-            projectId: "lucky-terminus-rxctm",
-            storageBucket: "lucky-terminus-rxctm.firebasestorage.app",
-            messagingSenderId: "649272707246",
-            appId: "1:649272707246:web:65fcaddf2369af8825853f"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app, "ai-studio-remixsmilefirsts-27d13ba5-d186-47ce-93e2-ae01efc23984");
-        window.firebaseDb = db;
-        window.firebaseAddDoc = addDoc;
-        window.firebaseCollection = collection;
-    </script>
     <script>
         tailwind.config = {
             theme: {
@@ -223,8 +203,8 @@
                 </div>
             </a>
             
-            <!-- Right Actions: Language Switcher, Mascot AI Assistant & Sponsor Credit -->
-            <div class="flex items-center space-x-3 md:space-x-5">
+            <!-- Right Actions: Language Switcher & Sponsor Credit -->
+            <div class="flex items-center space-x-4 md:space-x-6">
                 <!-- Sleek dual language toggle buttons -->
                 <div class="inline-flex bg-slate-100/80 backdrop-blur-sm p-1 rounded-xl border border-slate-200/50">
                     <button onclick="setLanguage('vi')" id="lang-btn-vi" class="px-2.5 py-1.5 rounded-lg text-[10px] font-extrabold tracking-wider transition-all duration-200 flex items-center space-x-1 bg-white text-orion-orange shadow-sm">
@@ -234,32 +214,6 @@
                         <span>🇬🇧</span> <span>EN</span>
                     </button>
                 </div>
-
-                <!-- Orion Mascot AI Chatbot Button (Right next to VN/EN button) -->
-                <button onclick="toggleAIChatModal()" id="header-ai-btn" class="relative group p-1.5 px-3 bg-gradient-to-r from-orion-orange via-amber-500 to-orion-orangeLight hover:from-amber-500 hover:to-orion-orange text-white rounded-xl shadow-md shadow-orange-500/20 transition-all duration-300 flex items-center space-x-2 border border-orange-400/30 hover:scale-105 active:scale-95 cursor-pointer" title="Bé Mầm Orion - Trợ lý AI Nha Khoa">
-                    <div class="relative w-7 h-7 rounded-full bg-white/25 p-0.5 flex items-center justify-center border border-white/40 overflow-hidden shadow-inner">
-                        <!-- Cute Tooth Mascot SVG Avatar -->
-                        <svg class="w-5 h-5 text-white animate-[pulse_2s_infinite]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 3C9 1.5 6 1.8 4.5 4.5C3 7 3.5 10.5 4.5 14C5.5 17.5 7.5 20.5 8.8 21.5C9.5 22 10.2 21.2 10.8 19.5C11.3 18 11.7 17 12 17C12.3 17 12.7 18 13.2 19.5C13.8 21.2 14.5 22 15.2 21.5C16.5 20.5 18.5 17.5 19.5 14C20.5 10.5 21 7 19.5 4.5C18 1.8 15 1.5 12 3Z" fill="#FFFFFF" fill-opacity="0.95" stroke="#FD7608" stroke-width="1.2"/>
-                            <!-- Cute smiling eyes -->
-                            <circle cx="8.5" cy="8.5" r="1.1" fill="#FD7608"/>
-                            <circle cx="15.5" cy="8.5" r="1.1" fill="#FD7608"/>
-                            <!-- Cute smile -->
-                            <path d="M9.5 11.8C10.5 13 13.5 13 14.5 11.8" stroke="#FD7608" stroke-width="1.5" stroke-linecap="round"/>
-                            <!-- Sparkle badge -->
-                            <path d="M18 2L18.5 3.5L20 4L18.5 4.5L18 6L17.5 4.5L16 4L17.5 3.5L18 2Z" fill="#FFD700"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col text-left leading-none">
-                        <span class="text-[10px] font-extrabold tracking-wider text-white flex items-center gap-1">
-                            <span>BÉ MẦM AI</span>
-                            <span class="text-[9px]">✨</span>
-                        </span>
-                        <span class="text-[8px] font-bold text-orange-100 opacity-90 tracking-tight" data-i18n="ai_header_sub">Tư vấn Nha Khoa</span>
-                    </div>
-                    <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 border-2 border-white rounded-full animate-ping"></span>
-                    <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-500 border-2 border-white rounded-full"></span>
-                </button>
 
                 <!-- Đối tác Đồng hành (Sponsor Credit - Tích hợp link Orion ngoài tab mới đạt chuẩn Safe-Zone) -->
                 <a href="https://nhakhoaorion.vn/" target="_blank" rel="noopener" class="flex items-center space-x-3 border-l border-slate-200 pl-4 md:pl-6 hover:opacity-85 transition-all duration-150">
@@ -900,13 +854,13 @@
                     <!-- Medical Ethics Compliance Checklist (Cột mốc Đạo đức truyền thông) -->
                     <div class="pt-2 space-y-3">
                         <label class="flex items-start space-x-3 cursor-pointer group">
-                            <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded border-slate-300 text-orion-orange focus:ring-orion-orange">
+                            <input type="checkbox" id="check-checklist" required class="mt-0.5 w-4 h-4 rounded border-slate-300 text-orion-orange focus:ring-orion-orange">
                             <span class="text-xs text-slate-500 leading-tight font-medium group-hover:text-slate-800 transition duration-150" data-i18n="form_check_newsletter">
                                 Đồng ý nhận cẩm nang <strong class="text-orion-darkBrown font-bold">"Smile First Checklist"</strong> hướng dẫn xây dựng thương hiệu cá nhân qua email/SĐT.
                             </span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer group">
-                            <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded border-slate-300 text-orion-orange focus:ring-orion-orange">
+                            <input type="checkbox" id="check-appointment" required class="mt-0.5 w-4 h-4 rounded border-slate-300 text-orion-orange focus:ring-orion-orange">
                             <span class="text-xs text-slate-500 leading-tight font-medium group-hover:text-slate-800 transition duration-150" data-i18n="form_check_appointment">
                                 Đồng ý đặt lịch hẹn tư vấn và lập phác đồ răng miệng 1-1 miễn phí với đối tác chuyên môn <strong class="text-orion-orange font-bold">Nha Khoa Orion</strong>.
                             </span>
@@ -914,7 +868,7 @@
                     </div>
 
                     <div class="pt-2">
-                        <button type="submit" class="shine-effect w-full bg-orion-orange hover:bg-orion-orangeLight text-white font-extrabold py-4 px-6 rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-200 text-xs tracking-wider uppercase" data-i18n="form_submit_btn">
+                        <button type="submit" id="form-submit-btn" class="shine-effect w-full bg-orion-orange hover:bg-orion-orangeLight text-white font-extrabold py-4 px-6 rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-200 text-xs tracking-wider uppercase" data-i18n="form_submit_btn">
                             KÍCH HOẠT ĐĂNG KÝ ĐỒNG HÀNH
                         </button>
                     </div>
@@ -1051,6 +1005,11 @@
             </div>
             <div class="space-y-2">
                 <h3 class="text-xl font-extrabold text-[#0A192F]" data-i18n="modal_success_title">Đăng Ký Đồng Hành Thành Công!</h3>
+                <!-- Firebase Database Sync Status Badge -->
+                <div class="inline-flex items-center justify-center space-x-1.5 bg-sky-50 border border-sky-200 text-sky-800 text-[10px] font-mono px-3 py-1 rounded-full w-full">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Firebase Cloud Sync: <strong id="modal-doc-id" class="text-academy-blue">#LIVE-SAVED</strong></span>
+                </div>
                 <div class="text-left bg-slate-50 p-4 rounded-2xl border border-slate-100/80 space-y-3">
                     <p class="text-[11px] font-extrabold text-emerald-600 uppercase tracking-wider text-center" data-i18n="modal_success_badge">✨ Đã Kích Hoạt 2 Đặc Quyền ✨</p>
                     <div class="flex items-start space-x-2 text-xs">
@@ -1073,8 +1032,33 @@
         </div>
     </div>
 
+    <!-- FIREBASE INITIALIZATION SCRIPT -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            projectId: "lucky-terminus-rxctm",
+            appId: "1:649272707246:web:65fcaddf2369af8825853f",
+            apiKey: "AIzaSyCc5ofWrbLN8n5g2J5mm0eK5dVSCqTR-aA",
+            authDomain: "lucky-terminus-rxctm.firebaseapp.com",
+            storageBucket: "lucky-terminus-rxctm.firebasestorage.app",
+            messagingSenderId: "649272707246"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app, "ai-studio-remixsmilefirsts-27d13ba5-d186-47ce-93e2-ae01efc23984");
+
+        window.firebaseDb = db;
+        window.firebaseAddDoc = addDoc;
+        window.firebaseCollection = collection;
+        window.firebaseServerTimestamp = serverTimestamp;
+    </script>
+
     <!-- JAVASCRIPT FOR INTERACTIVE LANDING PAGE QUIZ -->
     <script>
+        // Store user survey answers
+        window.userSurveyResponses = [];
         // Các màn hình khảo sát
         const pageWelcome = document.getElementById('quiz-screen-welcome');
         const pageActive = document.getElementById('quiz-screen-active');
@@ -1254,7 +1238,7 @@
                 insight2_a: "Không, việc ứng dụng các phác đồ kỹ thuật số hiện đại giúp tối ưu hóa lịch hẹn (chỉ cần tái khám sau 4-6 tuần), giúp người trẻ chủ động cân bằng hiệu quả.",
                 insight3_q: "\"Nên nhìn nhận việc chăm sóc và cải thiện nụ cười ở độ tuổi học sinh - sinh viên là một khoản 'chi phí làm đẹp xa xỉ' hay một 'khoản đầu tư thương hiệu cá nhân' lâu dài?\"",
                 insight3_a: "Là một khoản đầu tư chiến lược cho sức khỏe và sự tự tin, tạo bước đệm vững chắc cho các cơ hội nghề nghiệp tương lai.",
-                quiz_goto_passport_btn: "NHẬN THẺ PASSPORT ĐỒNG HÀNH",
+                quiz_goto_passport_btn: "<span>NHẬN THẺ PASSPORT ĐỒNG HÀNH</span> <span class=\"text-sm\">→</span>",
                 quiz_result_title: "TƯ DUY CHIẾN LƯỢC ĐÃ ĐƯỢC KHAI PHÁ!",
                 quiz_result_desc: "Bạn đã xuất sắc tháo gỡ hoàn toàn các lầm tưởng và mở khóa thành công tấm thẻ đồng hành kỹ thuật số đặc quyền.",
                 pass_partner_tag: "CHIẾN DỊCH HỌC ĐƯỜNG",
@@ -1302,8 +1286,6 @@
                 footer_ethics_desc: "Nội dung trang web tuân thủ nghiêm ngặt chuẩn mực y tế của BTC: Không phóng đại hiệu quả chỉnh nha; Không sử dụng hình ảnh Before-After gây áp lực ngoại hình; Không body-shaming khuyết điểm răng miệng; Mọi chỉ định dịch vụ y tế đều khuyến nghị tham vấn phụ huynh và bác sĩ chuyên khoa tại cơ sở phòng khám.",
                 footer_ai_title: "KHAI BÁO CÔNG CỤ AI",
                 footer_ai_desc: "Dự án ứng dụng công cụ hỗ trợ AI (Gemini) trong giai đoạn gợi ý cấu trúc mã nguồn web và biên tập ngữ liệu ban đầu. Toàn bộ bố cục mỹ thuật, chiến lược định vị và phông nền thiết kế đều do nhóm IGC BrandCrafters chỉnh sửa và đưa ra quyết định cuối cùng.",
-                ai_header_sub: "Tư vấn Nha Khoa",
-                chat_header_status: "Trợ lý Nha khoa & Smile First 24/7",
                 modal_success_title: "Đăng Ký Đồng Hành Thành Công!",
                 modal_success_badge: "✨ Đã Kích Hoạt 2 Đặc Quyền ✨",
                 modal_success_item1: "<strong class=\"text-academy-blue font-bold\">Cẩm nang & Passport số:</strong> Sẽ được Ban liên lạc chiến dịch gửi qua số điện thoại/email trong vòng 24 giờ tới.",
@@ -1392,14 +1374,14 @@
                 insights_badge: "PERSPECTIVES FOR YOU",
                 insights_title: "3 Core Solutions From Experts",
                 insights_sub: "Discover scientific campaign expert insights before claiming your exclusive Smile Passport card.",
-                insight_ans_prefix: "💡 Solution from campaign:",
-                insight1_q: "\"In professional communication, does orthodontic intervention (braces/aligners) hinder young people's confidence or personal branding opportunities?\"",
-                insight1_a: "No, modern aesthetic orthodontic methods help maintain a natural appearance, while a proactive self-care mindset is always highly valued.",
-                insight2_q: "\"With busy academic and extracurricular schedules, does orthodontic treatment cause major disruptions to students' timetables?\"",
-                insight2_a: "No, applying modern digital treatment plans optimizes appointment schedules (check-ups required only every 4-6 weeks), helping youth proactively balance effectively.",
-                insight3_q: "\"Should oral care and smile improvement during student years be seen as a 'luxury beauty expense' or a long-term 'personal branding investment'?\"",
+                insight_ans_prefix: "💡 Campaign Solution:",
+                insight1_q: "\"In professional communication, does orthodontic treatment (braces) hinder confidence or personal branding opportunities for young people?\"",
+                insight1_a: "No, modern aesthetic orthodontic methods help maintain a natural appearance; at the same time, a proactive spirit of self-care is always highly valued.",
+                insight2_q: "\"With a busy schedule of studies and extracurricular activities, does orthodontic treatment cause significant disruption to students' timetables?\"",
+                insight2_a: "No, the application of modern digital treatment plans optimizes appointment schedules (re-examinations only needed every 4-6 weeks), helping youth balance effectively.",
+                insight3_q: "\"Should smile care and improvement during student years be viewed as a 'luxury cosmetic expense' or a long-term 'personal brand investment'?\"",
                 insight3_a: "It is a strategic investment in health and confidence, creating a solid stepping stone for future career opportunities.",
-                quiz_goto_passport_btn: "CLAIM COMPANION PASSPORT CARD",
+                quiz_goto_passport_btn: "<span>CLAIM COMPANION PASSPORT CARD</span> <span class=\"text-sm\">→</span>",
                 quiz_result_title: "STRATEGIC MINDSET UNLEASHED!",
                 quiz_result_desc: "You have successfully cleared all misconceptions and unlocked your exclusive digital companion card.",
                 pass_partner_tag: "SCHOOL CAMPAIGN",
@@ -1447,8 +1429,6 @@
                 footer_ethics_desc: "Website content strictly complies with clinical communication ethics: No exaggeration of orthodontic results; No 'Before-After' imagery lookism pressure; No body-shaming of dental conditions; All clinical guidance advises consulting parents and specialist clinic doctors.",
                 footer_ai_title: "AI TOOL DISCLOSURE",
                 footer_ai_desc: "This project utilized AI assistance tools (Gemini) during draft code structural outline and initial copy editing stages. All final layout aesthetics, positioning strategies, and background designs were refined and finalized by IGC BrandCrafters.",
-                ai_header_sub: "Dental AI Guide",
-                chat_header_status: "Dental & Smile First Assistant 24/7",
                 modal_success_title: "Campaign Registration Successful!",
                 modal_success_badge: "✨ 2 Privileges Activated ✨",
                 modal_success_item1: "<strong class=\"text-academy-blue font-bold\">Handbook & Digital Passport:</strong> Will be sent to your phone/email by the campaign liaison team within 24 hours.",
@@ -1544,6 +1524,10 @@
         }
 
         function checkPageAnswer(optIndex, clickedBtn) {
+            // Record survey choice
+            if (!window.userSurveyResponses) window.userSurveyResponses = [];
+            window.userSurveyResponses[pageCurrentQ - 1] = optIndex === 0 ? "Yes" : "No";
+
             // Vô hiệu hóa lựa chọn khác sau khi chọn
             pageOptionBtns.forEach(btn => btn.disabled = true);
 
@@ -1603,47 +1587,72 @@
 
         async function handleFormSubmit(event) {
             event.preventDefault();
-            const form = event.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn ? submitBtn.innerText : '';
 
+            const nameInput = document.getElementById('student-name-input');
+            const phoneInput = document.getElementById('student-phone-input');
+            const emailInput = document.getElementById('student-email-input');
+            const methodSelect = document.getElementById('student-method-select');
+            const checkChecklist = document.getElementById('check-checklist');
+            const checkAppointment = document.getElementById('check-appointment');
+            const submitBtn = document.getElementById('form-submit-btn');
+
+            const fullName = nameInput ? nameInput.value.trim() : '';
+            const phoneNumber = phoneInput ? phoneInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const consultMethod = methodSelect ? methodSelect.value : 'direct';
+            const agreeChecklist = checkChecklist ? checkChecklist.checked : false;
+            const agreeAppointment = checkAppointment ? checkAppointment.checked : false;
+
+            const origBtnText = submitBtn ? submitBtn.innerText : '';
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerText = pageCurrentLanguage === 'vi' ? 'ĐANG ĐỒNG BỘ DỮ LIỆU...' : 'SYNCING TO FIREBASE...';
+                submitBtn.innerText = pageCurrentLanguage === 'vi' ? 'ĐANG ĐỒNG BỘ CƠ SỞ DỮ LIỆU FIREBASE...' : 'SYNCING WITH FIREBASE...';
             }
 
-            const fullName = document.getElementById('student-name-input')?.value || '';
-            const phone = document.getElementById('student-phone-input')?.value || '';
-            const email = document.getElementById('student-email-input')?.value || '';
-            const serviceInterest = document.getElementById('student-method-select')?.value || 'direct';
+            const payload = {
+                fullName: fullName,
+                phoneNumber: phoneNumber,
+                email: email,
+                consultMethod: consultMethod,
+                agreeChecklist: agreeChecklist,
+                agreeAppointment: agreeAppointment,
+                surveyAnswers: window.userSurveyResponses || [],
+                createdAt: new Date().toISOString(),
+                status: 'pending'
+            };
+
+            let docRefId = 'FS-' + Math.floor(100000 + Math.random() * 900000);
 
             try {
                 if (window.firebaseDb && window.firebaseAddDoc && window.firebaseCollection) {
-                    await window.firebaseAddDoc(window.firebaseCollection(window.firebaseDb, 'registrations'), {
-                        fullName: fullName,
-                        phone: phone,
-                        email: email,
-                        serviceInterest: serviceInterest,
-                        createdAt: new Date().toISOString()
-                    });
-                    console.log('✅ Synchronized registration data successfully to Firebase Firestore!');
-                } else {
-                    console.warn('Firebase DB not initialized yet, proceeding with local activation.');
+                    const docRef = await window.firebaseAddDoc(
+                        window.firebaseCollection(window.firebaseDb, "registrations"),
+                        payload
+                    );
+                    docRefId = docRef.id;
+                    console.log("Registered successfully in Firebase Firestore with ID: ", docRefId);
                 }
-            } catch (err) {
-                console.error('❌ Firestore Save Error:', err);
+            } catch (error) {
+                console.error("Error writing registration to Firestore:", error);
             } finally {
                 if (submitBtn) {
                     submitBtn.disabled = false;
-                    submitBtn.innerText = originalBtnText;
+                    submitBtn.innerText = origBtnText;
                 }
+            }
+
+            // Display Firebase record ID in modal
+            const modalDocIdEl = document.getElementById('modal-doc-id');
+            if (modalDocIdEl) {
+                modalDocIdEl.innerText = `#${docRefId}`;
             }
 
             const modal = document.getElementById('success-modal');
             if (modal) {
                 modal.classList.remove('hidden');
             }
-            form.reset();
+
+            event.target.reset();
             // Reset passport name too
             syncPassportName("");
         }
@@ -1734,252 +1743,6 @@
                 container.classList.add('border-orion-orange/30', 'shadow-md');
             }
         }
-
-        /* --- AI CHATBOT ASSISTANT (BÉ MẦM ORION) JAVASCRIPT LOGIC --- */
-        let chatHistory = [];
-        let isChatOpen = false;
-        let isChatLoading = false;
-
-        function toggleAIChatModal() {
-            const modal = document.getElementById('ai-chat-modal');
-            if (!modal) return;
-            isChatOpen = !isChatOpen;
-            if (isChatOpen) {
-                modal.classList.remove('translate-y-8', 'opacity-0', 'pointer-events-none');
-                modal.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
-                setTimeout(() => {
-                    document.getElementById('chat-user-input')?.focus();
-                }, 100);
-            } else {
-                modal.classList.add('translate-y-8', 'opacity-0', 'pointer-events-none');
-                modal.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
-            }
-        }
-
-        function clearChatHistory() {
-            chatHistory = [];
-            const container = document.getElementById('chat-messages-container');
-            if (container) {
-                const welcomeMsg = container.firstElementChild;
-                container.innerHTML = '';
-                if (welcomeMsg) container.appendChild(welcomeMsg);
-            }
-        }
-
-        function sendQuickPrompt(promptText) {
-            const inputEl = document.getElementById('chat-user-input');
-            if (inputEl) {
-                inputEl.value = promptText;
-                handleChatSubmit(new Event('submit'));
-            }
-        }
-
-        async function handleChatSubmit(event) {
-            if (event) event.preventDefault();
-            if (isChatLoading) return;
-
-            const inputEl = document.getElementById('chat-user-input');
-            const userPrompt = inputEl.value.trim();
-            if (!userPrompt) return;
-
-            inputEl.value = '';
-
-            // Append User Message to UI
-            appendChatMessage('user', userPrompt);
-
-            // Save user message to history
-            chatHistory.push({ role: 'user', content: userPrompt });
-
-            // Show Typing Indicator
-            isChatLoading = true;
-            showTypingIndicator();
-
-            try {
-                const response = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        messages: chatHistory,
-                        lang: pageCurrentLanguage
-                    })
-                });
-
-                removeTypingIndicator();
-
-                if (!response.ok) {
-                    const errData = await response.json().catch(() => ({}));
-                    throw new Error(errData.error || 'Lỗi kết nối máy chủ');
-                }
-
-                const data = await response.json();
-                const reply = data.reply || 'Cảm ơn câu hỏi của bạn. Bác sĩ Orion sẽ tư vấn kĩ hơn cho bạn!';
-
-                // Append Model Message to UI
-                appendChatMessage('model', reply);
-
-                // Save model message to history
-                chatHistory.push({ role: 'model', content: reply });
-            } catch (error) {
-                console.error('Chatbot error:', error);
-                removeTypingIndicator();
-                appendChatMessage('model', '⚠️ Xin lỗi bạn, hiện tại hệ thống AI đang bận. Bạn vui lòng thử lại sau ít phút hoặc để lại thông tin đặt lịch tại biểu mẫu bên dưới nhé!');
-            } finally {
-                isChatLoading = false;
-            }
-        }
-
-        function appendChatMessage(role, text) {
-            const container = document.getElementById('chat-messages-container');
-            if (!container) return;
-
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'flex items-start space-x-2.5 ' + (role === 'user' ? 'justify-end' : 'justify-start');
-
-            // Format markdown-like bold and linebreaks
-            const formattedText = text
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\n/g, '<br/>');
-
-            if (role === 'user') {
-                msgDiv.innerHTML = `
-                    <div class="bg-orion-orange text-white rounded-2xl p-3.5 rounded-tr-none shadow-sm max-w-[85%] text-xs md:text-sm font-medium leading-relaxed">
-                        ${formattedText}
-                    </div>
-                    <div class="w-7 h-7 rounded-xl bg-slate-200 flex items-center justify-center flex-shrink-0 text-xs text-slate-700 font-bold">
-                        👤
-                    </div>
-                `;
-            } else {
-                msgDiv.innerHTML = `
-                    <div class="w-7 h-7 rounded-xl bg-orange-100 border border-orion-orange/30 flex items-center justify-center flex-shrink-0 text-xs text-orion-orange font-bold">
-                        🦷
-                    </div>
-                    <div class="bg-white border border-slate-200/80 rounded-2xl p-3.5 rounded-tl-none shadow-sm max-w-[85%] text-xs md:text-sm text-slate-800 leading-relaxed font-medium space-y-1">
-                        ${formattedText}
-                    </div>
-                `;
-            }
-
-            container.appendChild(msgDiv);
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function showTypingIndicator() {
-            const container = document.getElementById('chat-messages-container');
-            if (!container) return;
-
-            const indicator = document.createElement('div');
-            indicator.id = 'chat-typing-indicator';
-            indicator.className = 'flex items-start space-x-2.5 justify-start';
-            indicator.innerHTML = `
-                <div class="w-7 h-7 rounded-xl bg-orange-100 border border-orion-orange/30 flex items-center justify-center flex-shrink-0 text-xs text-orion-orange font-bold">
-                    🦷
-                </div>
-                <div class="bg-white border border-slate-200/80 rounded-2xl p-3.5 rounded-tl-none shadow-sm text-xs text-slate-500 flex items-center space-x-1.5">
-                    <span class="font-semibold text-orion-orange">Bé Mầm đang soạn phản hồi</span>
-                    <span class="inline-flex gap-0.5">
-                        <span class="w-1.5 h-1.5 bg-orion-orange rounded-full animate-bounce" style="animation-delay: 0ms"></span>
-                        <span class="w-1.5 h-1.5 bg-orion-orange rounded-full animate-bounce" style="animation-delay: 150ms"></span>
-                        <span class="w-1.5 h-1.5 bg-orion-orange rounded-full animate-bounce" style="animation-delay: 300ms"></span>
-                    </span>
-                </div>
-            `;
-            container.appendChild(indicator);
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const indicator = document.getElementById('chat-typing-indicator');
-            if (indicator) indicator.remove();
-        }
     </script>
-
-    <!-- AI CHATBOT ASSISTANT MODAL (BÉ MẦM ORION) -->
-    <div id="ai-chat-modal" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[420px] max-h-[620px] h-[82vh] bg-white rounded-3xl shadow-2xl border border-orange-200/80 flex flex-col overflow-hidden transition-all duration-300 transform translate-y-8 opacity-0 pointer-events-none">
-        
-        <!-- Chatbot Header -->
-        <div class="bg-gradient-to-r from-academy-blue via-[#112240] to-academy-blue text-white p-4 px-5 flex items-center justify-between border-b border-orion-orange/30 shadow-sm relative overflow-hidden">
-            <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-orion-orange/15 rounded-full blur-xl pointer-events-none"></div>
-            
-            <div class="flex items-center space-x-3 relative z-10">
-                <!-- Mascot Animated Avatar Circle -->
-                <div class="relative w-10 h-10 rounded-2xl bg-gradient-to-tr from-orion-orange to-amber-400 p-0.5 shadow-md shadow-orange-500/30 flex items-center justify-center flex-shrink-0">
-                    <div class="w-full h-full rounded-[14px] bg-white flex items-center justify-center">
-                        <svg class="w-6 h-6 text-orion-orange" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 3C9 1.5 6 1.8 4.5 4.5C3 7 3.5 10.5 4.5 14C5.5 17.5 7.5 20.5 8.8 21.5C9.5 22 10.2 21.2 10.8 19.5C11.3 18 11.7 17 12 17C12.3 17 12.7 18 13.2 19.5C13.8 21.2 14.5 22 15.2 21.5C16.5 20.5 18.5 17.5 19.5 14C20.5 10.5 21 7 19.5 4.5C18 1.8 15 1.5 12 3Z" fill="#FD7608" fill-opacity="0.15" stroke="#FD7608" stroke-width="1.5"/>
-                            <circle cx="8.5" cy="8.5" r="1.2" fill="#FD7608"/>
-                            <circle cx="15.5" cy="8.5" r="1.2" fill="#FD7608"/>
-                            <path d="M9.5 11.8C10.5 13 13.5 13 14.5 11.8" stroke="#FD7608" stroke-width="1.8" stroke-linecap="round"/>
-                            <path d="M18 2L18.5 3.5L20 4L18.5 4.5L18 6L17.5 4.5L16 4L17.5 3.5L18 2Z" fill="#FFD700"/>
-                        </svg>
-                    </div>
-                    <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 border-2 border-academy-blue rounded-full"></span>
-                </div>
-                
-                <div>
-                    <div class="flex items-center space-x-1.5">
-                        <h4 class="font-extrabold text-sm text-white tracking-wide">Bé Mầm Orion AI</h4>
-                        <span class="bg-orion-orange/20 border border-orion-orange/40 text-orange-200 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">Expert</span>
-                    </div>
-                    <p class="text-[10px] text-slate-300 font-medium" data-i18n="chat_header_status">Trợ lý Nha khoa & Smile First 24/7</p>
-                </div>
-            </div>
-
-            <div class="flex items-center space-x-1 relative z-10">
-                <button onclick="clearChatHistory()" class="p-1.5 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition" title="Xóa hội thoại">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                </button>
-                <button onclick="toggleAIChatModal()" class="p-1.5 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition" title="Đóng">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Chat Messages Container -->
-        <div id="chat-messages-container" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/60 scroll-smooth">
-            <!-- Welcome message from Mascot -->
-            <div class="flex items-start space-x-2.5">
-                <div class="w-7 h-7 rounded-xl bg-orange-100 border border-orion-orange/30 flex items-center justify-center flex-shrink-0 text-xs text-orion-orange font-bold">
-                    🦷
-                </div>
-                <div class="bg-white border border-slate-200/80 rounded-2xl p-3.5 rounded-tl-none shadow-sm max-w-[88%] text-xs md:text-sm text-slate-800 space-y-2">
-                    <p id="chat-welcome-text" class="leading-relaxed font-medium">
-                        Xin chào! Mình là <strong>Bé Mầm Orion</strong> 🦷✨. Mình sẵn sàng tư vấn cho bạn tất cả câu hỏi về <strong>Nha Khoa Orion</strong>, các phương pháp niềng răng (khay trong suốt Invisalign, mắc cài), chi phí, quy trình tái khám và thẻ đặc quyền <strong>Smile Ambassador Passport</strong>!
-                    </p>
-                    <div class="pt-2 border-t border-slate-100">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2">Gợi ý câu hỏi nhanh dành cho bạn:</p>
-                        <div class="flex flex-wrap gap-1.5" id="chat-suggestion-pills">
-                            <button onclick="sendQuickPrompt('Niềng răng có đau không và mất bao lâu?')" class="text-[11px] bg-orange-50 hover:bg-orion-orange hover:text-white border border-orion-orange/20 text-orion-orange font-semibold px-2.5 py-1 rounded-full transition-all cursor-pointer">
-                                ⚡ Niềng răng có đau không?
-                            </button>
-                            <button onclick="sendQuickPrompt('Chi phí niềng răng HSSV tại Nha Khoa Orion?')" class="text-[11px] bg-orange-50 hover:bg-orion-orange hover:text-white border border-orion-orange/20 text-orion-orange font-semibold px-2.5 py-1 rounded-full transition-all cursor-pointer">
-                                💰 Chi phí & Trả góp 0%?
-                            </button>
-                            <button onclick="sendQuickPrompt('Chỉnh nha khay trong suốt Invisalign là gì?')" class="text-[11px] bg-orange-50 hover:bg-orion-orange hover:text-white border border-orion-orange/20 text-orion-orange font-semibold px-2.5 py-1 rounded-full transition-all cursor-pointer">
-                                💎 Khay niềng Invisalign?
-                            </button>
-                            <button onclick="sendQuickPrompt('Cách nhận thẻ đặc quyền Smile Ambassador Passport?')" class="text-[11px] bg-orange-50 hover:bg-orion-orange hover:text-white border border-orion-orange/20 text-orion-orange font-semibold px-2.5 py-1 rounded-full transition-all cursor-pointer">
-                                🎟️ Nhận thẻ Smile Passport
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Chat Input Footer -->
-        <div class="p-3 bg-white border-t border-slate-100 flex flex-col gap-2">
-            <form id="chat-input-form" onsubmit="handleChatSubmit(event)" class="flex items-center gap-2">
-                <input type="text" id="chat-user-input" placeholder="Hỏi Bé Mầm Orion về niềng răng, nha khoa..." class="flex-1 bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orion-orange/40 focus:bg-white transition" />
-                <button type="submit" id="chat-send-btn" class="bg-orion-orange hover:bg-orion-orangeLight text-white font-bold p-2.5 rounded-xl shadow-md shadow-orange-500/20 transition flex items-center justify-center flex-shrink-0 disabled:opacity-50 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9-7-9-7-9 7 9 7zm0 0v-8"></path></svg>
-                </button>
-            </form>
-            <div class="flex items-center justify-between text-[10px] text-slate-400 px-1 font-medium">
-                <span>Powered by Gemini 3.6 & Nha Khoa Orion</span>
-                <a href="#register-form" onclick="toggleAIChatModal()" class="text-orion-orange font-bold hover:underline">Đặt lịch khám Orion →</a>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
